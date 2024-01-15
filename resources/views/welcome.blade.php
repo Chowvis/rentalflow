@@ -51,7 +51,7 @@
         Similique delectus quis ipsa veritatis officiis ipsam explicabo nemo! Tempora, repellendus ducimus reiciendis deserunt ad facere, maiores eveniet sed nihil impedit ipsum illum maxime iste voluptatem nisi ipsa consequuntur soluta.
     </section>
 
-    <section id="home">
+    <section id="home" class="bg-blue-200">
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsa, neque dolorem aut nulla dolorum asperiores, ipsam eius inventore possimus mollitia nobis sequi, pariatur doloremque recusandae molestias impedit placeat? A.
         Quia, laudantium cupiditate aspernatur deleniti suscipit id repudiandae quas modi vitae molestias, consectetur, quaerat qui enim tempora assumenda fuga? Facilis, dicta veritatis at enim repudiandae odit dolorum distinctio architecto quo.
         Nesciunt laborum labore ipsum nisi odio, soluta et? Facere iste et reprehenderit mollitia. Pariatur veritatis aperiam quo qui. Dolores magnam nostrum dolorum libero beatae deleniti reiciendis nesciunt maiores impedit dignissimos?
