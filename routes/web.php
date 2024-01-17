@@ -1,7 +1,9 @@
 <?php
 
 use App\Http\Controllers\homepagecontroller;
+use App\Http\Controllers\logincontroller;
 use App\Http\Controllers\registrationcontroller;
+use App\Http\Controllers\signincontroller;
 use App\Http\Controllers\storecontroller;
 use Illuminate\Support\Facades\Route;
 
@@ -17,7 +19,10 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',[homepagecontroller::class,'home'])->name('homepage');
-Route::get('/signup',[registrationcontroller::class,'signup'])->name('signuppage');
 
+Route::get('/signup',[registrationcontroller::class,'signup'])->name('signuppage');
 Route::post('/store',[storecontroller::class,'store'])->name('store');
+
+Route::get('/signin',[signincontroller::class,'signin'])->name('signin');
+Route::post('/login',[logincontroller::class,'login'])->name('login');
 

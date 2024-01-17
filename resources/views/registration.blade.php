@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 </head>
-<body class="flex justify-center h-full bg-purple-300 ">
+<body class="flex justify-center h-full bg-purple-100 ">
 
     <div class="bg-white rounded-md p-10 h-max mt-5 border border-gray-300 w-475"> {{--i have made a custom width 475--}}
         <form action="{{route('store')}}" method="post" class="grid">
@@ -45,7 +45,7 @@
 
             <button name="register" class="bg-fuchsia-600 text-white p-2 rounded-md">Register</button>
             <div class="flex justify-center m-5">
-                <p class="text-gray-400 font-semibold font-sans">Already have an account? <a class="text-gray-600" href="">Sign in</a></p>
+                <p class="text-gray-400 font-semibold font-sans">Already have an account? <a class="text-gray-600" href="{{route('signin')}}">Sign in</a></p>
             </div>
         </form>
     </div>
