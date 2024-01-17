@@ -3,11 +3,12 @@ export default {
   content: ["./resources/**/*.{blade.php,js,vue}",],
   theme: {
     fontFamily:{
-        'nunito' : ['Nunito','sans-serif']
+        'nunito' : ['Nunito','sans-serif'],
+        'roboto' : ['roboto','sans'],
     },
     extend: {
         width:{
-            '450px':'450px'
+            '475':'475px'
         },
 
     },
