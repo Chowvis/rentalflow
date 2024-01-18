@@ -11,7 +11,8 @@
     <title>Document</title>
 </head>
 <body class="sm:container mx-auto px-20">
-    <header class="sm:container mx-auto fixed sticky top-0 left-0 right-0 z-10 bg-white">
+
+    <header class="mx-auto fixed sticky top-0 left-0 right-0 z-10 bg-white">
         <div class="flex justify-between h-16 items-center">
             <img src="images/logo.png" alt="rentalflo logo" class="h-10">
             <ul class="flex items-center gap-7 font-nunito font-bold text-purple-900 text-lg">
@@ -55,26 +56,20 @@
             </div>
         </div>
     </section>
-{{--  --}}
+{{--  random--}}
 
     <section>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Dicta officiis suscipit nesciunt dolor fugit, illo architecto incidunt repellendus quam dolorum quo explicabo dolores assumenda consequuntur veritatis, fuga culpa aliquam ea.
-        Enim earum eveniet quis? Dolore illo ea amet inventore ut ratione. Incidunt et doloremque modi voluptatem molestiae eligendi tenetur adipisci, consequatur expedita, ullam suscipit rem quaerat maxime earum? Voluptatem, alias?
-        Maiores hic odio exercitationem nisi odit! Nesciunt corporis perspiciatis unde earum nobis quae optio hic? Recusandae distinctio nisi placeat voluptatibus tenetur. Totam eum vitae aperiam dolor voluptatibus quisquam autem numquam!
-        Id neque soluta voluptatem perferendis voluptatibus iste? Animi pariatur, optio consequuntur sit commodi ab voluptatibus, culpa dignissimos omnis sed, vel fugiat. Molestias dolorum, iure et ea consectetur cupiditate provident sit?
-        Unde sapiente voluptate, itaque tempora hic accusantium eveniet reiciendis quis numquam nihil facilis laborum provident dolore aut deserunt officia facere, placeat officiis. Expedita nobis iste id vel neque corporis error.
-        Incidunt consequuntur vitae ipsa aperiam voluptatem impedit, ullam blanditiis aut provident suscipit non quidem veniam laudantium, debitis soluta est cupiditate voluptate, obcaecati quis expedita repudiandae iure animi aliquam optio! Vitae?
-        Nulla magni hic animi velit fuga. Cupiditate similique a praesentium incidunt voluptas commodi voluptatem iste eos veniam sunt eum quibusdam tempore reiciendis, sint atque, corrupti culpa neque vitae dolores dolor.
-        Fugit quibusdam eaque veritatis voluptas earum? Obcaecati ad perspiciatis, reiciendis quaerat dolorum velit autem laborum unde, nemo aspernatur vero hic iusto error quasi amet minima, tempore dolore praesentium impedit assumenda.
-        Soluta mollitia fugit debitis suscipit reiciendis nam, iste iusto minus velit temporibus accusantium repellat distinctio, commodi asperiores! Debitis alias molestiae doloribus consequuntur repudiandae molestias ipsa, sapiente optio sint consequatur reiciendis.
-        Similique delectus quis ipsa veritatis officiis ipsam explicabo nemo! Tempora, repellendus ducimus reiciendis deserunt ad facere, maiores eveniet sed nihil impedit ipsum illum maxime iste voluptatem nisi ipsa consequuntur soluta.
+        <div class="grid lg:grid-cols-3 mx-auto gap-3 h-600 grid-cols-1">
+            <div class="bg-blue-600">dfgdfg</div>
+            <div class="bg-blue-600">dfgdfg</div>
+            <div class="bg-blue-600">dfghd</div>
+            <div class="bg-blue-600">fghdf</div>
+            <div class="bg-blue-600">fgh</div>
+            <div class="bg-blue-600">dfgh</div>
+        </div>
     </section>
 
-<<<<<<< HEAD
     <section id="home" class="bg-green-200">
-=======
-    <section id="features" class="bg-blue-200">
->>>>>>> 982bb8011a38c9737d3d8b1040b7352ed0cd591c
         Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsa, neque dolorem aut nulla dolorum asperiores, ipsam eius inventore possimus mollitia nobis sequi, pariatur doloremque recusandae molestias impedit placeat? A.
         Quia, laudantium cupiditate aspernatur deleniti suscipit id repudiandae quas modi vitae molestias, consectetur, quaerat qui enim tempora assumenda fuga? Facilis, dicta veritatis at enim repudiandae odit dolorum distinctio architecto quo.
         Nesciunt laborum labore ipsum nisi odio, soluta et? Facere iste et reprehenderit mollitia. Pariatur veritatis aperiam quo qui. Dolores magnam nostrum dolorum libero beatae deleniti reiciendis nesciunt maiores impedit dignissimos?
