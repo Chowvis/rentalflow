@@ -17,6 +17,11 @@
 
 
     <div class="bg-white rounded-md p-10 h-max mt-5 border border-gray-300 w-475 font-nunito"> {{--i have made a custom width 475--}}
+        @if (session()->has('success'))
+            <div class="text-green-900 p-3 rounded-md border-gray-200 border-2 bg-green-300 opacity-60" role="alert">
+                {{session('success')}}
+            </div>
+        @endif
         <form action="{{route('login')}}" method="post" class="grid">
             @csrf
             {{-- logo --}}

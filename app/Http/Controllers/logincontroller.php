@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class logincontroller extends Controller
 {
     public function login(){
-        echo "logged in";
+        return view('dashboard.skeleton');
     }
 }

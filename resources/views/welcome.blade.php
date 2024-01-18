@@ -41,12 +41,11 @@
                     Maintain your property data efficiently.
                 </p>
 
-                <form class="bg-purple-900 hover:bg-lime-500
-                             text-white rounded-md pt-2 pb-2 pl-5 pr-5
-                             h-16 text-2xl justify-center flex items-center lg:w-96"
-                            action="{{route('signuppage')}}" method="get">
+                <form action="{{route('signuppage')}}" method="get">
 
-                    <button>Free Signup</button>
+                    <button class="bg-purple-900 hover:bg-lime-500
+                    text-white rounded-md pt-2 pb-2 pl-5 pr-5
+                    h-16 text-2xl justify-center flex items-center lg:w-96">Free Signup</button>
                 </form>
 
 

@@ -9,4 +9,5 @@ class registrationcontroller extends Controller
     public function signup(){
         return view('registration');
     }
+
 }
