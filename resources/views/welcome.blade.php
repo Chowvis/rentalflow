@@ -16,7 +16,7 @@
         <div class="flex justify-between h-16 items-center">
             <img src="images/logo.png" alt="rentalflo logo" class="h-10">
             <ul class="flex items-center gap-7 font-nunito font-bold text-purple-900 text-lg">
-                <li class="hover:text-lime-500 focus:text-lime-500"><a href="">Home</a></li>
+                <li class="hover:text-lime-500 focus:text-lime-500"><a href="#home">Home</a></li>
                 <li class="hover:text-lime-500"><a href="#features">Features</a></li>
                 <li class="hover:text-lime-500"><a href="">FAQ</a></li>
                 <li class="hover:text-lime-500"><a href="">Contact</a></li>
@@ -33,7 +33,7 @@
         </div>
     </header>
 {{-- features --}}
-    <section id="features" class="">
+    <section id="home" class="pt-20 pb-20">
         <div class="grid grid-cols-1 lg:grid-cols-2 lg-container mx-auto">
             <div class="flex justify-center flex-col p-3 gap-3 font-nunito">
                 <p class="text-xl">Property Management System</p>
@@ -58,7 +58,7 @@
     </section>
 {{--  random--}}
 
-    <section>
+    <section id="features" class="pt-10 pb-20 transition duration-700 ease-in-out">
         <div class="grid lg:grid-cols-3 mx-auto gap-3 h-600 grid-cols-1">
             <div class="bg-blue-600">dfgdfg</div>
             <div class="bg-blue-600">dfgdfg</div>
