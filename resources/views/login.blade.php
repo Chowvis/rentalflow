@@ -17,18 +17,25 @@
 
 
     <div class="bg-white rounded-md p-10 h-max mt-5 border border-gray-300 w-475 font-nunito"> {{--i have made a custom width 475--}}
-        @if (session()->has('success'))
-            <div class="text-green-900 p-3 rounded-md border-gray-200 border-2 bg-green-300 opacity-60" role="alert">
-                {{session('success')}}
-            </div>
-        @endif
+
         <form action="{{route('login')}}" method="post" class="grid">
             @csrf
             {{-- logo --}}
             <div class="flex justify-center">
                 <a href="{{route('homepage')}}" class="text-4xl font-bold text-fuchsia-950 mb-10 p-0">{{--link routed to home--}}
                 <img src="images/logo.png" alt="" class="h-16"></a>
+
             </div>
+                @if (session()->has('success'))
+                    <div class=" p-3 rounded-md shadow-sm bg-green-200 text-center mb-5" role="alert">
+                        <p class="text-green-900">{{session('success')}}</p>
+                    </div>
+                @endif
+                @if (session()->has('failed'))
+                    <div class=" p-3 rounded-md shadow-sm bg-red-200 text-center mb-5" role="alert">
+                        <p class="text-red-900">{{session('failed')}}</p>
+                    </div>
+                @endif
 
             {{--main form--}}
             <p class="font-bold text-2xl text-gray-700">Sign-in</p>
@@ -36,6 +43,9 @@
 
             <label for="Email" class="text-sm font-bold mt-5 mb-2 after:ml-0.5 after:text-red-500">Email</label>
             <input type="email" name="email" placeholder="Enter Your email or username" class="border border-gray-300 rounded-md p-2">
+            @error('email')
+                <span class="text-red-500 text-sm">{{$message}}</span>
+            @enderror
 
             <div class="flex justify-between mt-5 mb-1">
                 <label for="Password" class="text-sm font-bold  after:ml-0.5 after:text-red-500">Password</label>
@@ -43,6 +53,9 @@
             </div>
 
             <input type="password" name="password" placeholder="Enter your passcode" class="border border-gray-300 rounded-md p-2">
+            @error('password')
+                <span class="text-red-500 text-sm">{{$message}}</span>
+            @enderror
 
             <button name="signin" class="bg-purple-900 text-white p-2 rounded-md mt-5">Sign in</button>
 

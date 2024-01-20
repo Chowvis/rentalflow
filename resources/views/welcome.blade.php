@@ -12,7 +12,7 @@
 </head>
 <body class="sm:container mx-auto px-20">
 
-    <header class="mx-auto fixed sticky top-0 left-0 right-0 z-10 bg-white">
+    <header class="mx-auto sticky top-0 left-0 right-0 z-10 bg-white">
         <div class="flex justify-between h-16 items-center">
             <img src="images/logo.png" alt="rentalflo logo" class="h-10">
             <ul class="flex items-center gap-7 font-nunito font-bold text-purple-900 text-lg">
@@ -58,28 +58,54 @@
     </section>
 {{--  random--}}
 
-    <section id="features" class="pt-10 pb-20 transition duration-700 ease-in-out">
-        <div class="grid lg:grid-cols-3 mx-auto gap-3 h-600 grid-cols-1">
-            <div class="bg-blue-600">dfgdfg</div>
-            <div class="bg-blue-600">dfgdfg</div>
-            <div class="bg-blue-600">dfghd</div>
-            <div class="bg-blue-600">fghdf</div>
-            <div class="bg-blue-600">fgh</div>
-            <div class="bg-blue-600">dfgh</div>
+    <section id="features" class="pt-10 pb-20 font-nunito">
+        <header class="block text-center mb-10">
+            <h2 class="text-lime-500 text-sm font-bold pb-4 font-nunito">OUR AWESOME FEATURES</h2>
+            <p class="font-bold text-purple-900 text-4xl font-roboto">Features for property owners</p>
+          </header>
+        <div class="grid lg:grid-cols-3 mx-auto gap-5 h-600 grid-cols-1">
+            <div class="group flex flex-col justify-center items-center text-center p-5 hover:shadow-lg ease-out duration-500">
+                <img class="h-24 group-hover:scale-65 ease-out duration-300" src="images/01.png" alt="">
+                <p class="font-bold text-2xl text-purple-900 p-2">Easy Access</p>
+                <p class="text-lg">Organize all your properties at one place for better management.</p>
+            </div>
+
+            <div class="group flex flex-col justify-center items-center text-center p-5 hover:shadow-lg ease-out duration-500"">
+                <img class="h-24 group-hover:scale-65 ease-out duration-300" src="images/02.png" alt="">
+                <p class="font-bold text-2xl text-purple-900 p-2">Easy Tenant Management</p>
+                <p class="text-lg">Manage all your tenants information at one place. Get easy access to tenant information.</p>
+            </div>
+
+            <div class="group flex flex-col justify-center items-center text-center p-5 hover:shadow-lg ease-out duration-500"">
+                <img class="h-24 group-hover:scale-65 ease-out duration-300" src="images/03.png" alt="">
+                <p class="font-bold text-2xl text-purple-900 p-2">Rent Management</p>
+                <p class="text-lg">Organize your rents at one place. Easy to store the rent information for your property at one place.</p>
+            </div>
+
+            <div class="group flex flex-col justify-center items-center text-center p-5 hover:shadow-lg ease-out duration-500"">
+                <img class="h-24 group-hover:scale-65 ease-out duration-300" src="images/04.png" alt="">
+                <p class="font-bold text-2xl text-purple-900 p-2">Expense Management</p>
+                <p class="text-lg">Manage expenses at one place. Easy to add and edit expenses against your property at one place.</p>
+            </div>
+
+            <div class="group flex flex-col justify-center items-center text-center p-5 hover:shadow-lg ease-out duration-500"">
+                <img class="h-24 group-hover:scale-65 ease-out duration-300" src="images/05.png" alt="">
+                <p class="font-bold text-2xl text-purple-900 p-2">Files Management</p>
+                <p class="text-lg">Organize all your important documents related to your properties at one place. Easy upload and download options available.</p>
+            </div>
+
+            <div class="group flex flex-col justify-center items-center text-center p-5 hover:shadow-lg ease-out duration-500"">
+                <img class="h-24 group-hover:scale-65 ease-out duration-300" src="images/06.png" alt="">
+                <p class="font-bold text-2xl text-purple-900 p-2">Easy to Use</p>
+                <p class="text-lg">Our portal is very simple to use and yet very efficient.</p>
+            </div>
+
+
         </div>
     </section>
 
     <section id="home" class="bg-green-200">
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Exercitationem ipsa, neque dolorem aut nulla dolorum asperiores, ipsam eius inventore possimus mollitia nobis sequi, pariatur doloremque recusandae molestias impedit placeat? A.
-        Quia, laudantium cupiditate aspernatur deleniti suscipit id repudiandae quas modi vitae molestias, consectetur, quaerat qui enim tempora assumenda fuga? Facilis, dicta veritatis at enim repudiandae odit dolorum distinctio architecto quo.
-        Nesciunt laborum labore ipsum nisi odio, soluta et? Facere iste et reprehenderit mollitia. Pariatur veritatis aperiam quo qui. Dolores magnam nostrum dolorum libero beatae deleniti reiciendis nesciunt maiores impedit dignissimos?
-        Nihil, doloribus. Facere, itaque voluptas rerum doloribus exercitationem ex quam repellat dolore, ipsa aliquam aspernatur, et harum maxime? Suscipit nobis repellat rem qui amet animi optio inventore error a aperiam.
-        Commodi consequuntur repudiandae id enim, ullam quis, at nisi amet ea vitae sequi architecto in eos quisquam quae quos aut natus doloremque dignissimos quibusdam excepturi nesciunt. Facere odit ex tempore.
-        Iste in asperiores eveniet, dicta, dolorem illo veniam quidem numquam totam, officiis velit quam facilis nesciunt excepturi unde libero cupiditate maxime nobis ipsa! Voluptas error repudiandae veritatis ea nesciunt voluptatum?
-        Repudiandae ut ullam, id saepe asperiores sint nostrum. Praesentium, maxime. Corporis cum deserunt qui officia, dolor nisi accusamus aliquam esse facere ratione! Aliquam, vero delectus provident odit sint neque nemo.
-        Temporibus repudiandae veritatis dolorum odit ullam. Minima quibusdam incidunt recusandae rerum, beatae sapiente eius temporibus amet neque soluta labore, necessitatibus ullam error consequatur cupiditate exercitationem. Dicta, harum animi. Fugiat, praesentium.
-        Consequatur recusandae id eaque eveniet. Ea exercitationem sequi, ex rem pariatur quos quam architecto beatae quasi, magnam, commodi facilis. Obcaecati quas illum possimus dolorem ipsam, impedit soluta similique dignissimos dicta.
-        Laboriosam, qui. Quos maiores, voluptate tempora illo, dolore quis impedit facere assumenda dolor natus vitae id placeat alias similique debitis! Repellat consequuntur magni itaque expedita molestiae facilis nam quisquam quibusdam.
+
     </section>
 </body>
 </html>
