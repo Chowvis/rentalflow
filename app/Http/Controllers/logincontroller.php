@@ -14,10 +14,10 @@ class logincontroller extends Controller
         ]);
 
         if(Auth::attempt($credential)){
-            return view('dashboard.skeleton');
+            return redirect()->route('dashboard');
         }
-
-        return back()->with('failed','Invalid Password or Email Please try again');
-
+        else{
+            return back()->with('failed','Invalid Password or Email Please try again');
+        }
     }
 }
