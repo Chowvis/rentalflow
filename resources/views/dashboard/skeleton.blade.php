@@ -69,15 +69,19 @@
     </div>
     {{-- right content --}}
     <div class="w-full flex flex-col">
-        <div class="border-b border-t h-16 sticky top-0 bg-white flex justify-end items-center px-5">
-            <div class="h-16 flex items-center">
-                <div class="mr-2 rounded-full bg-blue-400 h-8 w-8 flex justify-center items-center font-bold text-white text-sm">
-                    OW
+        <div class="border-b border-t h-16 sticky top-0 bg-white flex justify-end items-center px-5 ">
+            <div class="h-16 flex items-center gap-4">
+                <div class="mr-2 rounded-full bg-blue-400 h-8 w-8 flex justify-center items-center font-bold text-white text-sm uppercase">
+                    {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
                 </div>
                 <div class="">
                     <p class="text-sm font-bold text-gray-500">OWNER</p>
-                    <p class="text-sm font-bold text-gray-500">Owner Name</p>{{--have to make an drop down here--}}
+                    <p class="text-sm font-bold text-gray-500">{{Auth::user()->fname}}</p>{{--have to make an drop down here--}}
                 </div>
+                <form action="{{route('logout')}}" method="POST">
+                    @csrf
+                    <button class="bg-red-500 px-3 py-2 rounded-md text-sm text-white hover:bg-red-900">Logout</button>
+                </form>
             </div>
         </div>
         {{-- main content here --}}

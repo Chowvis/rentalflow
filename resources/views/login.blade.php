@@ -18,7 +18,7 @@
 
     <div class="bg-white rounded-md p-10 h-max mt-5 border border-gray-300 w-475 font-nunito"> {{--i have made a custom width 475--}}
 
-        <form action="{{route('login')}}" method="post" class="grid">
+        <form action="{{route('loggedin')}}" method="post" class="grid">
             @csrf
             {{-- logo --}}
             <div class="flex justify-center">

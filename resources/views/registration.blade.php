@@ -57,7 +57,7 @@
 
             <button name="register" class="bg-fuchsia-600 text-white p-2 rounded-md">Register</button>
             <div class="flex justify-center m-5">
-                <p class="text-gray-400 font-semibold font-sans">Already have an account? <a class="text-gray-600" href="{{route('signin')}}">Sign in</a></p>
+                <p class="text-gray-400 font-semibold font-sans">Already have an account? <a class="text-gray-600" href="{{route('login')}}">Sign in</a></p>
             </div>
         </form>
     </div>

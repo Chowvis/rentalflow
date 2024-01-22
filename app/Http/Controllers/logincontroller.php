@@ -13,11 +13,19 @@ class logincontroller extends Controller
             'password' => ['required'],
         ]);
 
-        if(Auth::attempt($credential)){
+        if(auth()->attempt($credential)){
+            request()->session()->regenerate();
             return redirect()->route('dashboard');
         }
-        else{
-            return back()->with('failed','Invalid Password or Email Please try again');
-        }
+
+        return back()->with('failed','Invalid Password or Email Please try again');
+
+    }
+
+    public function logout(){
+        auth()->logout();
+        request()->session()->invalidate();
+        request()->session()->regenerate();
+        return redirect()->route('login');
     }
 }

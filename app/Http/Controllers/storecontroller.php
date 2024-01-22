@@ -28,6 +28,6 @@ class storecontroller extends Controller
             'email' => $email,
             'password' => $pass,
         ]);
-        return redirect()->route('signin')->with('success','You have successfully registered, Please Login');
+        return redirect()->route('login')->with('success','You have successfully registered, Please Login');
     }
 }
