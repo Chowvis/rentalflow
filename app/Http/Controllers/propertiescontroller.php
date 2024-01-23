@@ -9,4 +9,8 @@ class propertiescontroller extends Controller
     public function gotoproperties(){
         return view('properties.properties');
     }
+
+    public function addproperties(){
+        return view('properties.newproperty');
+    }
 }

@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-  content: ["./resources/**/*.{blade.php,js,vue}",
+  content: ["./resources/views/**/*.{blade.php,js,vue}",
             // "./resources/dashboard/.blade.php",
             ],
   theme: {
@@ -12,11 +12,13 @@ export default {
         width:{
             '475':'475px',
             '600':'600px',
-            '300':'340px'
+            '300':'340px',
+            '570':'570px',
         },
         height:{
             '475':'475px',
-            '600':'600px'
+            '600':'600px',
+            '570':'570px',
         },
         scale:{
             '65':'0.6'

@@ -41,8 +41,11 @@ Route::post('/logout',[logincontroller::class,'logout'])->name('logout');
 
 
 Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middleware('auth')->name('dashboard');
-
+// properties
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
+Route::post('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
+
+// end properties
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');
 Route::get('/rent',[rentcontroller::class,'gotorent'])->middleware('auth')->name('rent');
 Route::get('/expenses',[expensescontroller::class,'gotoexpenses'])->middleware('auth')->name('expenses');
