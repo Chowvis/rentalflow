@@ -87,7 +87,7 @@
         {{-- main content here --}}
         @yield('content')
         {{-- maincontent end here --}}
-        <footer class="flex justify-between items-center sticky bottom-0 h-14 px-5">
+        <footer class="flex justify-between items-center sticky bottom-0 h-14 px-5 bg-white">
             <div class="text-sm text-gray-400">© 2024 design with CheapLogic</div>
 
             <ul class="flex text-center items-center font-semibold text-gray-700 text-sm">
