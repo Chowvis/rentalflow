@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class expensescontroller extends Controller
 {
     public function gotoexpenses(){
-        return view("dashboard.expenses");
+        return view("expenses.expenses");
     }
 }

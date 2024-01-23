@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class tenantcontroller extends Controller
 {
     public function gototenants(){
-        return view('dashboard.tenants');
+        return view('tenants.tenants');
     }
 }

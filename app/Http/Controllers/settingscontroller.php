@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class settingscontroller extends Controller
 {
     public function gotosettings(){
-        return view("dashboard.setting");
+        return view("settings.setting");
     }
 }

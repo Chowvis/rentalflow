@@ -7,6 +7,6 @@ use Illuminate\Http\Request;
 class rentcontroller extends Controller
 {
     public function gotorent(){
-        return view("dashboard.rent");
+        return view("rent.rent");
     }
 }
