@@ -11,6 +11,7 @@ use App\Http\Controllers\settingscontroller;
 use App\Http\Controllers\signincontroller;
 use App\Http\Controllers\skeletoncontroller;
 use App\Http\Controllers\storecontroller;
+use App\Http\Controllers\storepropertiescontroller;
 use App\Http\Controllers\tenantcontroller;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Routing\Controllers\Middleware;
@@ -44,6 +45,7 @@ Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middlewar
 // properties
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
 Route::post('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
+Route::post('/storeproperty',[storepropertiescontroller::class,'storeproperties'])->name('storeproperty');
 
 // end properties
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');

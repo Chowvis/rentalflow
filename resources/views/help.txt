@@ -22,3 +22,118 @@
                 </div>
             </div>
         </li>
+
+
+
+
+
+
+///
+
+
+ <div class="p-5 grid ">
+
+                    <label for="title" class="text-sm font-sans mt-5 mb-2 font-bold">Title</label>
+                    <input type="text" name="title" placeholder="Enter Property name or title" class="border border-gray-300 rounded-md p-2 text-sm">
+
+
+                    <label for="address2" class="text-sm font-sans mt-5 mb-2 font-bold">Address 1</label>
+                    <input type="text" name="address2" placeholder="address line - 2" class="border border-gray-300 rounded-md p-2 text-sm">
+
+
+                    <label for="">State</label>
+                    <select name="" id="">
+                        <option value="">ab</option>
+                        <option value="">b</option>
+                        <option value="">b</option>
+                        <option value="">vn</option>
+                        <option value="">nm</option>
+                        <option value="">vbnm</option>
+                        <option value="">mbvn</option>
+                        <option value="">nmvb</option>
+                        <option value="">bnm</option>
+                        <option value="">bnm</option>
+                        <option value="">mvbn</option>
+                        <option value="">bnm</option>
+                        <option value="">bnm</option>
+                        <option value="">bnm</option>
+                        <option value="">bnm</option>
+                        <option value="">bnm</option>
+                        <option value="">,nbm,bn</option>
+                        <option value="">bnm,</option>
+                        <option value="">,bnm.,</option>
+                        <option value="">jfghjf</option>
+                        <option value="">jghj</option>
+                        <option value="">bnmf</option>
+                        <option value="">dhjdhm</option>
+                        <option value="">dghdgh</option>
+                        <option value="">dghmdgh</option>
+                        <option value="">dghm</option>
+                        <option value="">dhfjdfg</option>
+                        <option value="">dfghj</option>
+                    </select>
+
+
+                    <label for="">Pin Code</label>
+                    <input type="text">
+
+
+            </div>
+
+            <div>
+                <div>
+                    <label for="">Address 1</label>
+                    <input type="text">
+                </div>
+
+                <div>
+                    <label for="">Country</label>
+                    <input type="text">
+                </div>
+
+                <div>
+                    <label for="">City</label>
+                    <select name="" id="">
+                        <option value="" selected>Select city</option>
+                        <option value="">TAWANG</option>
+                        <option value="">WEST KAMENG</option>
+                        <option value="">EAST KAMENG</option>
+                        <option value="">PAPUM PARE</option>
+                        <option value="">LOWER SUBANSIRI</option>
+                        <option value="">UPPER SUBANSIRI</option>
+                        <option value="">WEST SIANG</option>
+                        <option value="">EAST SIANG</option>
+                        <option value="">UPPER SIANG</option>
+                        <option value="">DIBANG VALLEY</option>
+                        <option value="">LOHIT</option>
+                        <option value="">CHANGLANG</option>
+                        <option value="">TIRAP</option>
+                        <option value="">KURUNG KUMEY</option>
+                        <option value="">LOWER DEBANG VALLEY</option>
+                        <option value="">ANJAW</option>
+                        <option value="">LONGDING</option>
+                        <option value="">NAMSAI</option>
+                        <option value="">KRA DADI</option>
+                        <option value="">SIANG</option>
+                        <option value="">LOWER SIANG</option>
+                        <option value="">KAMLE</option>
+                        <option value="">CAPITAL COMPLEX ITANAGAR</option>
+                        <option value="">PAKE KESSANG</option>
+                        <option value="">SHI YOMI</option>
+                        <option value="">LEPA RADA</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label for="">Rent</label>
+                    <input type="text">
+                </div>
+            </div>
+            <hr>
+            <div>
+                <label for="">Description</label>
+                <input type="text">
+            </div>
+            <div>
+
+            </div>

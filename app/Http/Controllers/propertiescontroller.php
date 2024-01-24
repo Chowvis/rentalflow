@@ -13,4 +13,6 @@ class propertiescontroller extends Controller
     public function addproperties(){
         return view('properties.newproperty');
     }
+
+
 }
