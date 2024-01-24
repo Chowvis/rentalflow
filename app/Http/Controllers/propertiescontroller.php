@@ -15,4 +15,7 @@ class propertiescontroller extends Controller
     }
 
 
+
+
+
 }
