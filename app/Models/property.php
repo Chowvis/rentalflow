@@ -6,10 +6,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class property extends Model
+class Property extends Model
 {
     use HasFactory;
-
     protected $fillable = [
         'title',
         'address_1',

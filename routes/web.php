@@ -44,7 +44,7 @@ Route::post('/logout',[logincontroller::class,'logout'])->name('logout');
 Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middleware('auth')->name('dashboard');
 // properties
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
-Route::post('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
+Route::get('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
 Route::post('/storeproperty',[storepropertiescontroller::class,'storeproperties'])->name('storeproperty');
 
 // end properties

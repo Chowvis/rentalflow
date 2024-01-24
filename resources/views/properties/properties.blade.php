@@ -15,7 +15,7 @@
                         Export
                     </button>
                 </form>
-                <form action="{{route('addproperty')}}" method="POST">
+                <form action="{{route('addproperty')}}">
                     @csrf
                     <button class="bg-purple-800 text-white py-2 px-5 rounded-md text-sm font-bold hover:bg-purple-500">
                         <i class="fa-solid fa-plus pr-3"></i>
@@ -23,6 +23,11 @@
                     </button>
                 </form>
             </div>
+            @if (session()->has('success'))
+                    <div class=" p-3 rounded-md shadow-sm bg-green-200 text-center mb-5" role="alert">
+                        <p class="text-green-900">{{session('success')}}</p>
+                    </div>
+            @endif
 
 
 

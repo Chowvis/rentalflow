@@ -29,23 +29,32 @@
                 <div class="flex flex-col p-3">
                     <label for="address1" class="text-sm mt-5 mb-2 font-bold">Address 1</label>
                     <input type="text" name="address1" placeholder="address line - 1" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('address1')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
                     <label for="address2" class="text-sm mt-3 mb-2 font-bold">Address 2</label>
                     <input type="text" name="address2" placeholder="address line - 2" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('address2')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
                     <label for="country" class="text-sm mt-3 mb-2 font-bold">Country</label>
                     <input type="text" name="country" placeholder="Enter Country" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('country')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
                     <label for="state" class="text-sm mt-3 mb-2 font-bold">State</label>
                     <select name="state" id="" class="border border-gray-300 rounded-md p-2 text-sm">
                         <option value="" selected>select state</option>
-                        <option value="">b</option>
+                        <option value="Arunachal">b</option>
                         <option value="">b</option>
                         <option value="">vn</option>
                         <option value="">nm</option>
@@ -73,13 +82,16 @@
                         <option value="">dhfjdfg</option>
                         <option value="">dfghj</option>
                     </select>
+                    @error('state')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
                     <label for="city" class="text-sm mt-3 mb-2 font-bold">City</label>
                     <select name="city" id="" class="border border-gray-300 rounded-md p-2 text-sm">
                         <option value="" selected>Select city</option>
-                        <option value="">TAWANG</option>
+                        <option value="Tawang">TAWANG</option>
                         <option value="">WEST KAMENG</option>
                         <option value="">EAST KAMENG</option>
                         <option value="">PAPUM PARE</option>
@@ -106,16 +118,25 @@
                         <option value="">SHI YOMI</option>
                         <option value="">LEPA RADA</option>
                     </select>
+                    @error('city')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
                     <label for="pincode" class="text-sm mt-3 mb-2 font-bold">Pin Code</label>
                     <input type="text" name="pincode" placeholder="Enter Pincode" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('pincode')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
                     <label for="rent" class="text-sm mt-3 mb-2 font-bold">Rent</label>
                     <input type="number" name="rent" placeholder="₹ amount" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('rent')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
             </div>
 
@@ -124,7 +145,9 @@
                 <div class="flex flex-col ">
                     <label for="rent" class="text-sm mt-3 mb-2 font-bold">Description</label>
                     <textarea name="description" id="" cols="30" rows="3" placeholder="Enter Description" class="border border-gray-300 rounded-md p-2 text-sm"></textarea>
-
+                    @error('description')
+                        <span class="text-red-500 text-sm">{{$message}}</span>
+                    @enderror
                 </div>
             </div>
             <hr>

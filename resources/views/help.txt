@@ -22,9 +22,48 @@
                 </div>
             </div>
         </li>
+///
+protected $fillable = [
+        'title',
+        'address_1',
+        'address_2',
+        'country',
+        'state',
+        'city',
+        'pincode',
+        'rent',
+        'description',
+    ];
+    public function users(): BelongsTo
+    {
+        return $this->belongsTo(User::class);
+    }
 
+//
+public function up(): void
+    {
+        Schema::create('property', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('address_1');
+            $table->string('address_2');
+            $table->string('country');
+            $table->string('state');
+            $table->string('city');
+            $table->integer('pincode');
+            $table->integer('rent');
+            $table->string('description')->nullable();
+            $table->timestamps();
+        });
+    }
 
-
+    /**
+     * Reverse the migrations.
+     */
+    public function down(): void
+    {
+        Schema::dropIfExists('property');
+    }
 
 
 
