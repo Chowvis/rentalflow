@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class storepropertiescontroller extends Controller
 {
     public function storeproperties(){
-        request()->validate([
+        $validate= request()->validate([
             'title' => 'required|min:4',
             'address1' => 'required',
             'address2' => 'required',
@@ -17,10 +17,14 @@ class storepropertiescontroller extends Controller
             'city' => 'required',
             'pincode' => 'required|max:6',
             'rent' => 'required',
+            'description' => 'nullable|max:300',
         ]);
 
+        $user = auth()->user();
+        //user id will be picked automatically by auth function
         $property = Property::create([
             'title' => request()->get('title'),
+            'user_id' => $user->id,
             'address_1' => request()->get('address1'),
             'address_2' => request()->get('address2'),
             'country' => request()->get('country'),

@@ -23,16 +23,36 @@
                     </button>
                 </form>
             </div>
-            @if (session()->has('success'))
-                    <div class=" p-3 rounded-md shadow-sm bg-green-200 text-center mb-5" role="alert">
-                        <p class="text-green-900">{{session('success')}}</p>
-                    </div>
-            @endif
+
 
 
 
 
 
         </div>
+        @if (session()->has('success'))
+                    <div class=" p-3 rounded-md shadow-sm bg-green-200 text-center mb-5" role="alert">
+                        <p class="text-green-900">{{session('success')}}</p>
+                    </div>
+        @endif
+        <div class="p-3">
+            @if ($properties->count() > 0)
+            <ul class="p-5">
+                @foreach ($properties as $property)
+                    <li class="flex flex-row">
+                        <div class="basis-4/12">{{$property->title}}</div>
+                        <div class="basis-4/12">{{$property->address_1}}</div>
+                        <div class="basis-1/12">a</div>
+                        <div class=basis-2/12>vacant</div>
+                        <div class="basis-1/12">{{$property->state}}</div>
+                    </li>
+                @endforeach
+            </ul>
+        @endif
+        </div>
+
+
+
+
     </div>
 @endsection

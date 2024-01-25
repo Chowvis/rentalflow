@@ -11,6 +11,7 @@ class Property extends Model
     use HasFactory;
     protected $fillable = [
         'title',
+        'user_id',
         'address_1',
         'address_2',
         'country',
@@ -20,7 +21,7 @@ class Property extends Model
         'rent',
         'description',
     ];
-    public function users(): BelongsTo
+    public function user()
     {
         return $this->belongsTo(User::class);
     }
