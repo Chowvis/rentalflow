@@ -5,7 +5,7 @@
         <div class="flex justify-between p-3 h-24 items-center">
             <div>
                 <p class="text-gray-800 font-bold text-3xl">Properties</p>
-                <p class="py-2 font-semibold text-gray-400">no. of properties</p>
+                <p class="py-2 font-semibold text-gray-400">You have {{count($properties)}} properties</p>
             </div>
             <div class="flex items-center gap-5">
                 <form action="" method="POST">
@@ -35,21 +35,36 @@
                         <p class="text-green-900">{{session('success')}}</p>
                     </div>
         @endif
-        <div class="p-3">
+        <div class="border border-gray-300 p-3 rounded-md">
+            <div class="flex flex-row px-5 py-3 font-bold text-gray-400">
+                <div class="basis-4/12">Name</div>
+                <div class="basis-4/12">Address</div>
+                <div class="basis-1/12">Status</div>
+                <div class="basis-2/12">Occupancy</div>
+                <div class="basis-1/12"></div>
+            </div>
+            <hr>
             @if ($properties->count() > 0)
-            <ul class="p-5">
+            <ul class="px-5">
                 @foreach ($properties as $property)
-                    <li class="flex flex-row">
-                        <div class="basis-4/12">{{$property->title}}</div>
-                        <div class="basis-4/12">{{$property->address_1}}</div>
+                    <li class="flex flex-row py-4">
+                        <div class="basis-4/12 uppercase flex items-center">
+                            <span class="bg-green-600 rounded-full w-10 h-10 text-white text-sm p-3 text-center">{{$property->title[0]}}</span>
+                            <span class="pl-3">{{$property->title}}</span>
+                        </div>
+                        <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
                         <div class="basis-1/12">a</div>
                         <div class=basis-2/12>vacant</div>
                         <div class="basis-1/12">{{$property->state}}</div>
                     </li>
+                    <hr>
                 @endforeach
             </ul>
+
         @endif
         </div>
+
+
 
 
 
