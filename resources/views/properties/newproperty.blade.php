@@ -53,35 +53,14 @@
                 <div class="flex flex-col p-3">
                     <label for="state" class="text-sm mt-3 mb-2 font-bold">State</label>
                     <select name="state" id="" class="border border-gray-300 rounded-md p-2 text-sm">
-                        <option value="" selected>select state</option>
-                        <option value="Arunachal">b</option>
-                        <option value="">b</option>
-                        <option value="">vn</option>
-                        <option value="">nm</option>
-                        <option value="">vbnm</option>
-                        <option value="">mbvn</option>
-                        <option value="">nmvb</option>
-                        <option value="">bnm</option>
-                        <option value="">bnm</option>
-                        <option value="">mvbn</option>
-                        <option value="">bnm</option>
-                        <option value="">bnm</option>
-                        <option value="">bnm</option>
-                        <option value="">bnm</option>
-                        <option value="">bnm</option>
-                        <option value="">,nbm,bn</option>
-                        <option value="">bnm,</option>
-                        <option value="">,bnm.,</option>
-                        <option value="">jfghjf</option>
-                        <option value="">jghj</option>
-                        <option value="">bnmf</option>
-                        <option value="">dhjdhm</option>
-                        <option value="">dghdgh</option>
-                        <option value="">dghmdgh</option>
-                        <option value="">dghm</option>
-                        <option value="">dhfjdfg</option>
-                        <option value="">dfghj</option>
+                        <option class="text-md uppercase font-bold text-gray-400" value="" selected>select state</option>
+                        <option class="text-md uppercase font-bold text-gray-400" value="Arunachal Pradesh">Arunachal Pradesh</option>
+                        <option class="text-md uppercase font-bold text-gray-400" value="Assam">Assam</option>
+                        <option class="text-md uppercase font-bold text-gray-400" value="Meghalaya">Meghalaya</option>
+                        <option class="text-md uppercase font-bold text-gray-400" value="Delhi">Delhi</option>
+
                     </select>
+
                     @error('state')
                         <span class="text-red-500 text-sm">{{$message}}</span>
                     @enderror

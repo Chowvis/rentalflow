@@ -28,15 +28,11 @@ use Illuminate\Routing\Controllers\Middleware;
 */
 
 Route::get('/',[homepagecontroller::class,'home'])->name('homepage');
-
 Route::get('/signup',[registrationcontroller::class,'signup'])->name('signuppage');
 Route::post('/store',[storecontroller::class,'store'])->name('store');
 
 Route::get('/signin',[signincontroller::class,'signin'])->name('login');
-// Route::post('/login',[logincontroller::class,'login'])->middleware('auth')->name('login');
-
 Route::post('/loggedin',[logincontroller::class,'login'])->name('loggedin');
-// Route::post('skeleton',[skeletoncontroller::class,'logged'])->middleware('auth')->name('loggedin');
 Route::post('/logout',[logincontroller::class,'logout'])->name('logout');
 // after login routes--->>>>
 
@@ -45,7 +41,8 @@ Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middlewar
 // properties
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
 Route::get('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
-Route::post('/storeproperty',[storepropertiescontroller::class,'storeproperties'])->name('storeproperty');
+Route::post('/storeproperty',[propertiescontroller::class,'storeproperties'])->middleware('auth')->name('storeproperty');
+Route::get('/viewdetail/{property}',[propertiescontroller::class,'show'])->middleware('auth')->name('show');
 
 // end properties
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');

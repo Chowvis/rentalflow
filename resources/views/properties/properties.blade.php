@@ -40,8 +40,8 @@
                 <div class="basis-4/12">Name</div>
                 <div class="basis-4/12">Address</div>
                 <div class="basis-1/12">Status</div>
-                <div class="basis-2/12">Occupancy</div>
-                <div class="basis-1/12"></div>
+                <div class="basis-1/12">Occupancy</div>
+                <div class="basis-2/12"></div>
             </div>
             <hr>
             @if ($properties->count() > 0)
@@ -54,8 +54,11 @@
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
                         <div class="basis-1/12">a</div>
-                        <div class=basis-2/12>vacant</div>
-                        <div class="basis-1/12">{{$property->state}}</div>
+                        <div class=basis-1/12>vacant</div>
+                        <div class="basis-2/12 flex items-center">
+                            <a class="rounded-md bg-green-400 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
+                            <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="">Edit Details</a>
+                        </div>
                     </li>
                     <hr>
                 @endforeach
