@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <div class="border border-gray-300 p-3 rounded-md">
+        <div class="border border-gray-300 p-3 rounded-md bg-white">
             <div class="flex flex-row px-5 py-3 gap-3 font-bold text-gray-400">
                 <div class="">Name</div>
                 <div class="">Address</div>

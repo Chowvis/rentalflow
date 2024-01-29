@@ -43,6 +43,8 @@ Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middle
 Route::get('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
 Route::post('/storeproperty',[propertiescontroller::class,'storeproperties'])->middleware('auth')->name('storeproperty');
 Route::get('/viewdetail/{property}',[propertiescontroller::class,'show'])->middleware('auth')->name('show');
+Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty'])->middleware('auth')->name('edit');
+Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
 
 // end properties
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');

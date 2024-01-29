@@ -57,6 +57,30 @@ class propertiescontroller extends Controller
         return view('properties.show',compact('property'));
     }
 
+    public function editproperty(Property $property){
+        return view('properties.editproperty',compact('property'));
+    }
+
+    public function updateproperty(Property $property,Request $request){
+        $validate= request()->validate([
+            'title' => 'required|min:4',
+            'address1' => 'required',
+            'address2' => 'required',
+            'country' => 'required',
+            'state' => 'required',
+            'city' => 'required',
+            'pincode' => 'required|max:6',
+            'rent' => 'required',
+            'description' => 'nullable|max:300',
+        ]);
+
+
+        $property->update($request->all());
+        return redirect()->route('properties')->with('success','Property is Updated successfully');
+
+
+    }
+
 
 
 

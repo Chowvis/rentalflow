@@ -17,7 +17,7 @@
     <div class="flex flex-col sticky left-0 top-0 h-screen w-300 border-r border-gray-200">
         {{-- logo --}}
         <div class="h-16 flex justify-start items-center pl-5 border-b">
-            <img class="h-8" src="images/logo.png" alt="">
+            <img class="h-8" src="/images/logo.png" alt="">
         </div>
         {{-- menu --}}
         <div class=" border-gray-200">
