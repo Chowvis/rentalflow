@@ -15,7 +15,7 @@
                         Export
                     </button>
                 </form>
-                <form action="">
+                <form action="{{route('addtenant')}}">
                     @csrf
                     <button class="bg-purple-800 text-white py-2 px-5 rounded-md text-sm font-bold hover:bg-purple-500">
                         <i class="fa-solid fa-plus pr-3"></i>
