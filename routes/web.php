@@ -45,9 +45,14 @@ Route::post('/storeproperty',[propertiescontroller::class,'storeproperties'])->m
 Route::get('/viewdetail/{property}',[propertiescontroller::class,'show'])->middleware('auth')->name('show');
 Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty'])->middleware('auth')->name('edit');
 Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
-
 // end properties
+
+
+// Tenants
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');
+Route::get('/newtenant',[tenantcontroller::class,'addtenants'])->middleware('auth')->name('addtenant');
+Route::post('/storetenant',[tenantcontroller::class,'storetenants'])->middleware('auth')->name('storetenant');
+// end tenants
 Route::get('/rent',[rentcontroller::class,'gotorent'])->middleware('auth')->name('rent');
 Route::get('/expenses',[expensescontroller::class,'gotoexpenses'])->middleware('auth')->name('expenses');
 Route::get('/settings',[settingscontroller::class,'gotosettings'])->middleware('auth')->name('settings');

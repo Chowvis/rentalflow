@@ -26,5 +26,10 @@ class Property extends Model
         return $this->belongsTo(User::class);
     }
 
+    public function tenants(){
+        return $this->hasOne(Tenant::class);
+    }
+
+
 
 }
