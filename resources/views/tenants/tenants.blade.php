@@ -60,12 +60,12 @@
                             <div class="basis-1/12 flex items-center justify-end pr-10">
                                 {{-- <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
                                 <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a> --}}
-                                <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
+                                <button id="dropdownMenuIconButton" data-dropdown-toggle="{{$tenant->id}}" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
                                     <i class="fa-solid fa-ellipsis-vertical"></i>
                                 </button>
 
                                     <!-- Dropdown menu -->
-                                <div id="dropdownDots" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                <div id="{{$tenant->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                     <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
                                         <li>
                                         <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
