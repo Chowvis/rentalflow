@@ -22,7 +22,7 @@
         {{-- menu --}}
         <div class=" border-gray-200">
             <ul class="block h-full pt-4">
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-purple-500">
+                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-purple-500 {{Route::is('dashboard')?'text-purple-500':''}}">
                     <a href="{{route('dashboard')}}">
                         <i class="fa-solid fa-chart-pie text-gray-500 text-lg w-8 group-hover:text-purple-500 ease-out duration-300"></i>
                         Dashboard
@@ -87,7 +87,7 @@
         {{-- main content here --}}
         @yield('content')
         {{-- maincontent end here --}}
-        <footer class="flex justify-between items-center sticky bottom-0 h-14 px-5 bg-white">
+        <footer class="flex justify-between items-center bottom-0 h-14 px-5 bg-white">
             <div class="text-sm text-gray-400">© 2024 design with CheapLogic</div>
 
             <ul class="flex text-center items-center font-semibold text-gray-700 text-sm">
@@ -98,5 +98,6 @@
 
         </footer>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
 </body>
 </html>

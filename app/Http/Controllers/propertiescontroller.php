@@ -64,8 +64,8 @@ class propertiescontroller extends Controller
     public function updateproperty(Property $property,Request $request){
         $validate= request()->validate([
             'title' => 'required|min:4',
-            'address1' => 'required',
-            'address2' => 'required',
+            'address_1' => 'required',
+            'address_2' => 'required',
             'country' => 'required',
             'state' => 'required',
             'city' => 'required',

@@ -20,7 +20,7 @@
             <div class="grid lg:grid-cols-2 grid-cols-1 pb-5">
                 <div class="flex flex-col p-3">
                     <label for="name" class="text-sm mt-5 mb-2 font-bold">Name</label>
-                    <input type="text" name="name" placeholder="Enter name" class="border border-gray-300 rounded-md p-2 text-sm">
+                    <input type="text" name="name" placeholder="Enter name" class="border border-gray-300 rounded-md p-2 text-sm" value="{{old('name')}}">
                     @error('name')
                         <span class="text-red-500 text-sm">{{$message}}</span>
                     @enderror

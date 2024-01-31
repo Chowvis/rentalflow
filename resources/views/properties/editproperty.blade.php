@@ -32,17 +32,17 @@
                 </div>
 
                 <div class="flex flex-col p-3">
-                    <label for="address1" class="text-sm mt-5 mb-2 font-bold">Address 1</label>
-                    <input type="text" value="{{$property->address_1}}" name="address1" placeholder="address line - 1" class="border border-gray-300 rounded-md p-2 text-sm">
-                    @error('address1')
+                    <label for="address_1" class="text-sm mt-5 mb-2 font-bold">Address 1</label>
+                    <input type="text" value="{{$property->address_1}}" name="address_1" placeholder="address line - 1" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('address_1')
                         <span class="text-red-500 text-sm">{{$message}}</span>
                     @enderror
                 </div>
 
                 <div class="flex flex-col p-3">
-                    <label for="address2" class="text-sm mt-3 mb-2 font-bold">Address 2</label>
-                    <input type="text" value="{{$property->address_2}}" name="address2" placeholder="address line - 2" class="border border-gray-300 rounded-md p-2 text-sm">
-                    @error('address2')
+                    <label for="address_2" class="text-sm mt-3 mb-2 font-bold">Address 2</label>
+                    <input type="text" value="{{$property->address_2}}" name="address_2" placeholder="address line - 2" class="border border-gray-300 rounded-md p-2 text-sm">
+                    @error('address_2')
                         <span class="text-red-500 text-sm">{{$message}}</span>
                     @enderror
                 </div>

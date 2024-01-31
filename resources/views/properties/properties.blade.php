@@ -55,12 +55,48 @@
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
                         <div class="basis-1/12">a</div>
                         <div class=basis-1/12>vacant</div>
-                        <div class="basis-2/12 flex items-center">
+                        {{-- <div class="basis-2/12 flex items-center">
                             <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
                             <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a>
+                        </div> --}}
+
+
+                        <div class="basis-2/12 flex items-center justify-end pr-10">
+                            <button id="dropdownMenuIconButton" data-dropdown-toggle="{{$property->id}}" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
+                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                            </button>
+
+                                <!-- Dropdown menu -->
+                            <div id="{{$property->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
+                                    <li>
+                                    <a href="{{route('show', $property->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                        <i class="fa-solid fa-eye px-3"></i> View
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="{{route('edit', $property->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                        <i class="fa-solid fa-user-pen px-3"></i> Edit
+                                    </a>
+                                    </li>
+                                    <li>
+                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                        <i class="fa-solid fa-ban px-3"></i> Deactive
+                                    </a>
+                                    </li>
+                                </ul>
+
+                            </div>
+
+
                         </div>
+
                     </li>
+
                     <hr>
+
+
+
                 @endforeach
             </ul>
 
