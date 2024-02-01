@@ -42,9 +42,11 @@ Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middlewar
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
 Route::get('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
 Route::post('/storeproperty',[propertiescontroller::class,'storeproperties'])->middleware('auth')->name('storeproperty');
-Route::get('/viewdetail/{property}',[propertiescontroller::class,'show'])->middleware('auth')->name('show');
+Route::get('/viewproperty/{property}',[propertiescontroller::class,'show'])->middleware('auth')->name('show');
 Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty'])->middleware('auth')->name('edit');
 Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
+Route::get('assigntenant/{property}',[propertiescontroller::class,'gotoassigntenant'])->middleware('auth')->name('goassign');
+Route::post('assignt/{property}',[propertiescontroller::class,'assigntenant'])->middleware('auth')->name('assign');
 // end properties
 
 
@@ -52,6 +54,10 @@ Route::post('updateproperty/{property}',[propertiescontroller::class,'updateprop
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');
 Route::get('/newtenant',[tenantcontroller::class,'addtenants'])->middleware('auth')->name('addtenant');
 Route::post('/storetenant',[tenantcontroller::class,'storetenants'])->middleware('auth')->name('storetenant');
+Route::get('/viewtenant/{tenant}',[tenantcontroller::class,'show'])->middleware('auth')->name('showT');
+Route::get('/edittenant/{tenant}',[tenantcontroller::class,'edittenant'])->middleware('auth')->name('editT');
+Route::post('updatetenant/{tenant}',[tenantcontroller::class,'updatetenant'])->middleware('auth')->name('updateT');
+
 // end tenants
 Route::get('/rent',[rentcontroller::class,'gotorent'])->middleware('auth')->name('rent');
 Route::get('/expenses',[expensescontroller::class,'gotoexpenses'])->middleware('auth')->name('expenses');

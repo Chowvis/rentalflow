@@ -3,13 +3,15 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use App\Models\Tenant;
 use Illuminate\Http\Request;
 
 class propertiescontroller extends Controller
 {
     public function gotoproperties(){
         $user = auth()->user();
-        $properties = $user->properties()->orderBy('created_at', 'desc')->get();
+        $properties = $user->properties;
+        $tenants = $user->tenants;
 
         return view('properties.properties',compact('properties'));
     }
@@ -81,6 +83,25 @@ class propertiescontroller extends Controller
 
     }
 
+    public function gotoassigntenant(Property $property){
+        $user = auth()->user();
+        $tenants = $user->tenants;
+        return view('properties.assign',compact('property','tenants'));
+    }
+
+
+    public function assigntenant(Property $property,Request $request){
+        $ten =  request()->validate([
+            'tenant_id' => 'required',
+        ]);
+
+        $property->tenant_id=request()->get('tenant_id');
+        $property->save();
+        echo $property->tenant_id;
+        // $property->update($ten);
+        // return redirect()->route('properties')->with('success','Property is Updated successfully');
+
+    }
 
 
 

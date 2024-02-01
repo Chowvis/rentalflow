@@ -36,4 +36,29 @@ class tenantcontroller extends Controller
 
         return redirect()->route('tenants',)->with('success','Tenant has been registered successfully');
     }
+
+    public function show(Tenant $tenant){
+
+        return view('tenants.show',compact('tenant'));
+    }
+
+    public function edittenant(Tenant $tenant){
+        return view('tenants.edittenant',compact('tenant'));
+    }
+
+    public function updatetenant(Tenant $tenant,Request $request){
+        $validate= request()->validate([
+            'name' => 'required|min:2',
+            'contact_no' => 'required|min:10|numeric',
+            'email' => 'required|email',
+            'address' => 'nullable|max:300',
+        ]);
+
+
+        $tenant->update($request->all());
+        return redirect()->route('tenants')->with('success','Tenant is Updated successfully');
+
+
+    }
+
 }

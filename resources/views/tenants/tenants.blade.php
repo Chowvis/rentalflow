@@ -68,12 +68,12 @@
                                 <div id="{{$tenant->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
                                     <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
                                         <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                        <a href="{{route('showT',$tenant->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
                                             <i class="fa-solid fa-eye px-3"></i> View
                                         </a>
                                         </li>
                                         <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                        <a href="{{route('editT',$tenant->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
                                             <i class="fa-solid fa-user-pen px-3"></i> Edit
                                         </a>
                                         </li>

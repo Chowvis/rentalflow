@@ -54,7 +54,7 @@
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
                         <div class="basis-1/12">a</div>
-                        <div class=basis-1/12>vacant</div>
+                        <div class=basis-1/12>{{($property->tenant_id!==null)?$property->tenant_id:'vacant'}}</div>
                         {{-- <div class="basis-2/12 flex items-center">
                             <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
                             <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a>
@@ -80,9 +80,20 @@
                                     </a>
                                     </li>
                                     <li>
-                                    <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
-                                        <i class="fa-solid fa-ban px-3"></i> Deactive
+                                    <a href="{{route('goassign', $property->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                        <i class="fa-solid fa-ban px-3"></i> Assign Tenant
                                     </a>
+
+                                    {{-- <select name="tenant_name" id="tenant" class="z-10 right-80">
+                                        @foreach ($tenants as $tenant)
+                                            <option value="{{$tenant->name}}">{{$tenant->name}}</option>
+                                        @endforeach
+                                    </select> --}}
+
+
+
+
+
                                     </li>
                                 </ul>
 
