@@ -10,7 +10,7 @@ class propertiescontroller extends Controller
 {
     public function gotoproperties(){
         $user = auth()->user();
-        $properties = $user->properties;
+        $properties = $user->properties; //relation are used here
         $tenants = $user->tenants;
 
         return view('properties.properties',compact('properties'));
@@ -94,12 +94,18 @@ class propertiescontroller extends Controller
         $ten =  request()->validate([
             'tenant_id' => 'required',
         ]);
+        if($property->tenant_id==='vacant'){
+            $property->tenant_id=request()->get('tenant_id');
+            $property->save();
+            return redirect()->route('properties')->with('success','Property is Updated successfully');
+        }
 
-        $property->tenant_id=request()->get('tenant_id');
-        $property->save();
-        echo $property->tenant_id;
+        return redirect()->route('properties')->with('failed','Property has already assigned');
+        // $property->tenant_id=request()->get('tenant_id');
+        // $property->save();
+        // echo $property->tenant_id;
         // $property->update($ten);
-        // return redirect()->route('properties')->with('success','Property is Updated successfully');
+
 
     }
 

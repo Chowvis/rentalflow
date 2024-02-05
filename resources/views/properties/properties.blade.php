@@ -35,6 +35,11 @@
                         <p class="text-green-900">{{session('success')}}</p>
                     </div>
         @endif
+        @if (session()->has('failed'))
+                    <div class=" p-3 rounded-md shadow-sm bg-red-200 text-center mb-5" role="alert">
+                        <p class="text-red-900">{{session('failed')}}</p>
+                    </div>
+        @endif
         <div class="border border-gray-300 p-3 rounded-md bg-white">
             <div class="flex flex-row px-5 py-3 font-bold text-gray-400">
                 <div class="basis-4/12">Name</div>
