@@ -9,7 +9,8 @@ class tenantcontroller extends Controller
 {
     public function gototenants(){
         $user = auth()->user();
-        $tenants = $user->tenants()->orderBy('created_at', 'desc')->get(); //here tenants() is a function from user model
+        $properties = $user->properties;
+        $tenants = $user->tenants; //here tenants() is a function from user model
         return view('tenants.tenants',compact('tenants'));
     }
 

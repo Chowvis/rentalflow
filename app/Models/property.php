@@ -20,6 +20,8 @@ class Property extends Model
         'pincode',
         'rent',
         'description',
+        'tenant_id',
+        'tenant_name',
     ];
     public function user()
     {

@@ -90,17 +90,28 @@ class propertiescontroller extends Controller
     }
 
 
-    public function assigntenant(Property $property,Request $request){
+    public function assigntenant(Property $property,Tenant $tenant){
         $ten =  request()->validate([
             'tenant_id' => 'required',
         ]);
-        if($property->tenant_id==='vacant'){
+
+        if($property->tenant_id===null){
             $property->tenant_id=request()->get('tenant_id');
+            $tenant=Tenant::where('id','=',request()->get('tenant_id'))->first();
+
+            $property->tenant_name = $tenant->name;
+            // $tenant = Tenant::findOrFail(request()->get('tenant_id'));
             $property->save();
+            $tenant->update([
+                'property_id' => $property->id,
+                // Update other fields as needed
+            ]);
+
             return redirect()->route('properties')->with('success','Property is Updated successfully');
         }
 
         return redirect()->route('properties')->with('failed','Property has already assigned');
+
         // $property->tenant_id=request()->get('tenant_id');
         // $property->save();
         // echo $property->tenant_id;

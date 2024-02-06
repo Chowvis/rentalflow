@@ -41,7 +41,7 @@
                     </div>
         @endif
         <div class="border border-gray-300 p-3 rounded-md bg-white">
-            <div class="flex flex-row px-5 py-3 font-bold text-gray-400">
+            <div class="flex flex-row px-5 py-3 font-bold text-gray-400 text-sm">
                 <div class="basis-4/12">Name</div>
                 <div class="basis-4/12">Address</div>
                 <div class="basis-1/12">Status</div>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
                         <div class="basis-1/12">a</div>
-                        <div class=basis-1/12>{{($property->tenant_id!==null)?$property->tenant_id:'vacant'}}</div>
+                        <div class=basis-1/12>{{($property->tenant_id!==null)?$property->tenant_name:'vacant'}}</div>
                         {{-- <div class="basis-2/12 flex items-center">
                             <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
                             <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a>

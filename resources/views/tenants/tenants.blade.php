@@ -52,9 +52,9 @@
                                 <span class="bg-blue-400 rounded-full w-10 h-10 text-white text-sm p-3 text-center">{{$tenant->name[0]}}</span>
                                 <span class="pl-3">{{$tenant->name}}</span>
                             </div>
-                            <div class="basis-2/12 text-gray-400">nil</div>
+                            <div class="basis-2/12 text-gray-400">{{$tenant->property_id}}</div>
                             <div class="basis-2/12">{{$tenant->contact_no}}</div>
-                            <div class=basis-3/12></div>
+                            <div class=basis-3/12>{{$tenant->property_id}}</div>
                              <div class="basis-1/12 flex items-center"></div>
 
                             <div class="basis-1/12 flex items-center justify-end pr-10">
