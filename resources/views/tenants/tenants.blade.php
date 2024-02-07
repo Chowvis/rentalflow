@@ -47,7 +47,7 @@
             @if ($tenants->count() > 0)
                 <ul class="px-5">
                     @foreach ($tenants as $tenant)
-                        <li class="flex flex-row py-4">
+                        <li class="flex flex-row py-4 text-sm">
                             <div class="basis-3/12 uppercase flex items-center">
                                 <span class="bg-blue-400 rounded-full w-10 h-10 text-white text-sm p-3 text-center">{{$tenant->name[0]}}</span>
                                 <span class="pl-3">{{$tenant->name}}</span>

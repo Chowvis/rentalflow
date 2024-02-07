@@ -4,7 +4,7 @@
     <div class="p-5 bg-gray-50 h-full">
         <div class="flex justify-between p-3 h-24 items-center">
             <div>
-                <p class="text-gray-800 font-bold text-3xl">Properties</p>
+                <p class="text-gray-800 font-bold text-[25px]">Properties</p>
                 <p class="py-2 font-semibold text-gray-400">You have {{count($properties)}} properties</p>
             </div>
             <div class="flex items-center gap-5">
@@ -45,28 +45,28 @@
                 <div class="basis-4/12">Name</div>
                 <div class="basis-4/12">Address</div>
                 <div class="basis-1/12">Status</div>
-                <div class="basis-1/12">Occupancy</div>
-                <div class="basis-2/12"></div>
+                <div class="basis-2/12">Occupancy</div>
+                <div class="basis-1/12"></div>
             </div>
             <hr>
             @if ($properties->count() > 0)
             <ul class="px-5">
                 @foreach ($properties as $property)
-                    <li class="flex flex-row py-4">
+                    <li class="flex flex-row py-4 text-sm items-center">
                         <div class="basis-4/12 uppercase flex items-center">
                             <span class="bg-green-600 rounded-full w-10 h-10 text-white text-sm p-3 text-center">{{$property->title[0]}}</span>
-                            <span class="pl-3">{{$property->title}}</span>
+                            <span class="pl-3 font-bold text-gray-900">{{$property->title}}</span>
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
                         <div class="basis-1/12">a</div>
-                        <div class=basis-1/12>{{($property->tenant_id!==null)?$property->tenant_name:'vacant'}}</div>
+                        <div class="basis-2/12 font-bold text-gray-500">{{($property->tenant_id!==null)?$property->tenant_name:'vacant'}}</div>
                         {{-- <div class="basis-2/12 flex items-center">
                             <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
                             <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a>
                         </div> --}}
 
 
-                        <div class="basis-2/12 flex items-center justify-end pr-10">
+                        <div class="basis-1/12 flex items-center justify-end pr-10">
                             <button id="dropdownMenuIconButton" data-dropdown-toggle="{{$property->id}}" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
                                 <i class="fa-solid fa-ellipsis-vertical"></i>
                             </button>
