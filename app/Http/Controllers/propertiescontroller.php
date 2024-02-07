@@ -100,15 +100,18 @@ class propertiescontroller extends Controller
             $tenant=Tenant::where('id','=',request()->get('tenant_id'))->first();
 
             $property->tenant_name = $tenant->name;
-            // $tenant = Tenant::findOrFail(request()->get('tenant_id'));
+            $tenant = Tenant::findOrFail(request()->get('tenant_id'));
             $property->save();
             $tenant->update([
                 'property_id' => $property->id,
+                'property_name' => $property->title,
+
                 // Update other fields as needed
             ]);
 
+
             return redirect()->route('properties')->with('success','Property is Updated successfully');
-        }
+            }
 
         return redirect()->route('properties')->with('failed','Property has already assigned');
 

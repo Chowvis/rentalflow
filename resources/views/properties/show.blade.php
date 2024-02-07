@@ -16,12 +16,13 @@
         </div>
 
         <div class="border border-gray-300 p-3 rounded-md bg-white">
-            <div class="flex flex-row px-5 py-3 gap-4 font-bold text-gray-400">
-                <div class="p-1" id="s1">Personal</div>
-                <div class="p-1" id="s2">Attachments</div>
-                <div class="p-1" id="s3">Location</div>
+            <div class="flex flex-row mx-5 gap-4 font-bold text-gray-400 border-b border-gray-200">
+                <div class="py-2 cursor-pointer border-b-[3px] border-purple-500 text-purple-500" id="s1">
+                    <i class="fa-regular fa-user pr-3"></i>Personal</div>
+                <div class="py-2 cursor-pointer" id="s2">Attachments</div>
+                <div class="py-2 cursor-pointer " id="s3">Location</div>
             </div>
-            <hr>
+
 
 
 
@@ -30,7 +31,7 @@
             {{--  --}}
             <div class="px-5 py-3">
 
-                <table id="personal" class="hidden border border-gray-300 w-full border-collapse text-gray-500 font-roboto text-sm">
+                <table id="personal" class=" border border-gray-300 w-full border-collapse text-gray-500 font-roboto text-sm">
                     <tr class="">
                         <th class="border border-gray-300 w-1/5 border-collapse p-4">Property Id</th>
                         <td class="border border-gray-300 w-full border-collapse px-3">{{$property->id}}</td>
@@ -80,7 +81,7 @@
 
                 </table>
 
-                <div id="attachment" class="">attachments</div>
+                <div id="attachment" class="hidden ">attachments</div>
                 <div id="location" class="hidden">Location</div>
 
 
@@ -96,6 +97,34 @@
 
     </div>
     <script>
+        var s1 = document.getElementById('s1');
+        s1.addEventListener('click', function find1(){
+            document.getElementById('personal').setAttribute('class','');
+            document.getElementById('s1').classList.add('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('s2').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('s3').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('attachment').setAttribute('class','hidden');
+            document.getElementById('location').setAttribute('class','hidden');
+        })
 
+        var s2 = document.getElementById('s2');
+        s2.addEventListener('click', function find2(){
+            document.getElementById('personal').setAttribute('class','hidden');
+            document.getElementById('s2').classList.add('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('s1').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('s3').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('attachment').setAttribute('class','');
+            document.getElementById('location').setAttribute('class','hidden');
+        })
+
+        var s3 = document.getElementById('s3');
+        s3.addEventListener('click', function find3(){
+            document.getElementById('personal').setAttribute('class','hidden');
+            document.getElementById('s3').classList.add('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('s2').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('s1').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
+            document.getElementById('attachment').setAttribute('class','hidden');
+            document.getElementById('location').setAttribute('class','');
+        })
     </script>
 @endsection

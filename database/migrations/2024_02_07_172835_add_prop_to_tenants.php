@@ -11,11 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('properties', function (Blueprint $table) {
-            $table -> string('tenant_name')->nullable();
-            $table -> decimal('lat',15,12)->nullable();
-            $table -> decimal('lng',15,12)->nullable();
-
+        Schema::table('tenants', function (Blueprint $table) {
+            $table->foreignId('property_id')->nullable()->constrained();
         });
     }
 
@@ -24,7 +21,7 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::table('properties', function (Blueprint $table) {
+        Schema::table('tenants', function (Blueprint $table) {
             //
         });
     }

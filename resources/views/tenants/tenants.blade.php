@@ -48,14 +48,18 @@
                 <ul class="px-5">
                     @foreach ($tenants as $tenant)
                         <li class="flex flex-row py-4 text-sm">
-                            <div class="basis-3/12 uppercase flex items-center">
-                                <span class="bg-blue-400 rounded-full w-10 h-10 text-white text-sm p-3 text-center">{{$tenant->name[0]}}</span>
-                                <span class="pl-3">{{$tenant->name}}</span>
+                            <div class="basis-3/12 flex items-center">
+                                <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3 text-center uppercase">{{$tenant->name[0]}}</span>
+                                <div class="flex flex-col">
+                                    <span class="pl-3 uppercase">{{$tenant->name}}</span>
+                                    <span class="pl-3 text-xs">{{$tenant->email}}</span>
+                                </div>
+
                             </div>
-                            <div class="basis-2/12 text-gray-400">{{$tenant->property_id}}</div>
-                            <div class="basis-2/12">{{$tenant->contact_no}}</div>
-                            <div class=basis-3/12>{{$tenant->property_id}}</div>
-                             <div class="basis-1/12 flex items-center"></div>
+                            <div class="basis-2/12 text-gray-400 flex items-center">{{$tenant->property_name}}</div>
+                            <div class="basis-2/12 flex items-center">{{$tenant->contact_no}}</div>
+                            <div class="basis-3/12 flex items-center"></div>
+                             <div class="basis-1/12 flex items-center">{{$tenant->property_id}}</div>
 
                             <div class="basis-1/12 flex items-center justify-end pr-10">
                                 {{-- <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>

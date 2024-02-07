@@ -15,6 +15,7 @@ class Tenant extends Model
         'contact_no',
         'email',
         'address',
+        'property_name'
     ];
     public function user()
     {

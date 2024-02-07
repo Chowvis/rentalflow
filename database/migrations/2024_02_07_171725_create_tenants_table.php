@@ -14,12 +14,13 @@ return new class extends Migration
         Schema::create('tenants', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-
+            $table->string('property_name')->nullable();
             $table->string('name');
-            $table->integer('contact_no');
+            $table->bigInteger('contact_no');
             $table->string('email');
             $table->string('address');
             $table->timestamps();
+
         });
     }
 
