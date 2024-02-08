@@ -49,7 +49,7 @@
                     @foreach ($tenants as $tenant)
                         <li class="flex flex-row py-4 text-sm">
                             <div class="basis-3/12 flex items-center">
-                                <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3 text-center uppercase">{{$tenant->name[0]}}</span>
+                                <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3 flex items-center justify-center uppercase">{{$tenant->name[0]}}</span>
                                 <div class="flex flex-col">
                                     <span class="pl-3 uppercase">{{$tenant->name}}</span>
                                     <span class="pl-3 text-xs">{{$tenant->email}}</span>

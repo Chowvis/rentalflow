@@ -92,7 +92,7 @@
                         <option value="">LOWER DEBANG VALLEY</option>
                         <option value="">ANJAW</option>
                         <option value="">LONGDING</option>
-                        <option value="">NAMSAI</option>
+                        <option value="Namsai">NAMSAI</option>
                         <option value="">KRA DADI</option>
                         <option value="">SIANG</option>
                         <option value="">LOWER SIANG</option>
@@ -144,8 +144,10 @@
 
             <hr>
             <div class="p-3 pb-5">
-                <div class="">
+                <div class="h-80 w-full" id="map">
                     leaflet
+                    <input type="number" step="0.000000000000001" name="latitude" id="latitude" class="hidden" value="">
+                    <input type="number" step="0.000000000000001" name="longitude" id="longitude" class="hidden" value="">
                 </div>
             </div>
             <hr>
@@ -167,4 +169,28 @@
         </form>
 
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script>
+        var coordinates;
+        var map = L.map('map').setView([{{$property->lat}}, {{$property->lng}}], 5);
+
+        // layers
+        var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        });
+
+        var myMarker = L.marker([{{$property->lat}}, {{$property->lng}}])
+        // myMarker.addTo(map) will add the marker
+        myMarker.addTo(map)
+
+        map.on('click',function(e) {
+            myMarker.setLatLng(e.latlng)
+
+            document.getElementById('latitude').value = e.latlng.lat;
+            document.getElementById('longitude').value = e.latlng.lng;
+        });
+
+        myMarker.addTo(map);
+        osm.addTo(map);
+    </script>
 @endsection

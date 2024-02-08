@@ -2,6 +2,12 @@
 
 @section('content')
     <div class="p-6 bg-gray-50 h-full">
+
+        @if (session()->has('success'))
+            <div class=" p-3 rounded-md shadow-sm bg-green-200 text-center mb-5" role="alert">
+                <p class="text-green-900">{{session('success')}}</p>
+            </div>
+        @endif
         {{-- first section --}}
         <div class="flex justify-between p-3 h-24 items-center">
             <div>

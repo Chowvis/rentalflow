@@ -76,21 +76,44 @@
                     {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
                 </div>
                 <div class="cursor-pointer" id="menuButton">
-                    <p class="text-sm font-bold text-gray-500">OWNER</p>
-                    <p class="text-sm font-bold text-gray-500">{{Auth::user()->fname}}</p>{{--have to make an drop down here--}}
+                    <p class="text-xs font-semibold text-gray-500">OWNER</p>
+                    <p class="text-xs font-bold text-gray-500">{{Auth::user()->fname}}</p>{{--have to make an drop down here--}}
+                </div>
+                <div>
+                    <i class="fa-regular fa-bell text-lg"></i>
                 </div>
 
-                <div class="hidden absolute top-16 right-24 h-[190px] w-[200px]" id="menu">
-                    <div>gfhfgh</div>
-                    <div>fghfg</div>
-                    <div>fghhhhh</div>
+                <div class="hidden absolute top-16 right-24 h-[250px] w-[278px] rounded-md
+                          bg-white border-t-[3px] border-blue-400 shadow-lg" id="menu">
+                    <div class="flex gap-2 items-center bg-slate-100 p-5">
+                        <div class="mr-2 rounded-full bg-blue-400 h-10 w-10 flex justify-center items-center font-bold text-white text-sm uppercase">
+                            {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
+                        </div>
+                        <div>
+                            <p class="text-sm font-bold text-gray-500">{{Auth::user()->fname}} {{Auth::user()->lname}}</p>{{--have to make an drop down here--}}
+                            <p class="text-xs font-bold text-gray-500">{{Auth::user()->email}}</p>{{--have to make an drop down here--}}
+                        </div>
+                    </div>
+                    <div class="px-8 py-3 flex flex-col justify-center">
+                        <div class="py-2 text-sm font-bold text-slate-700 hover:text-blue-400">
+                            <a href="{{route('edituser')}}"><i class="fa-solid fa-user pr-2"></i>View Profile</a>
+                        </div>
+                        <div class="py-2 text-sm font-bold text-slate-700 hover:text-blue-400">
+                            <a href=""><i class="fa-solid fa-camera pr-2"></i>Change Profile Picture</a>
+                        </div>
+                    </div>
+
+                    <hr>
+                    <div class="px-5 py-3 flex items-center justify-center">
+                        <form action="{{route('logout')}}" method="POST">
+                            @csrf
+                            <button class="bg-red-500 px-3 py-2 font-bold rounded-md text-sm text-white hover:bg-red-900">Logout</button>
+                        </form>
+                    </div>
                 </div>
 
 
-                {{-- <form action="{{route('logout')}}" method="POST">
-                    @csrf
-                    <button class="bg-red-500 px-3 py-2 rounded-md text-sm text-white hover:bg-red-900">Logout</button>
-                </form> --}}
+
 
 
 

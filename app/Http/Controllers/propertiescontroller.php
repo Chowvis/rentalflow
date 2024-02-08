@@ -78,6 +78,8 @@ class propertiescontroller extends Controller
             'pincode' => 'required|max:6',
             'rent' => 'required',
             'description' => 'nullable|max:300',
+            'latitude' => 'nullable',
+            'longitude' => 'nullable',
         ]);
 
 

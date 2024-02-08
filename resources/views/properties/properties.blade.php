@@ -54,7 +54,7 @@
                 @foreach ($properties as $property)
                     <li class="flex flex-row py-4 text-sm items-center">
                         <div class="basis-4/12 uppercase flex items-center">
-                            <span class="bg-green-600 rounded-full w-10 h-10 text-white text-sm p-3 text-center">{{$property->title[0]}}</span>
+                            <span class="bg-green-600 rounded-full w-10 h-10 text-white text-sm p-3 flex items-center justify-center">{{$property->title[0]}}</span>
                             <span class="pl-3 font-bold text-gray-900">{{$property->title}}</span>
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>

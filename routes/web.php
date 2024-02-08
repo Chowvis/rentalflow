@@ -38,6 +38,8 @@ Route::post('/logout',[logincontroller::class,'logout'])->name('logout');
 
 
 Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middleware('auth')->name('dashboard');
+Route::get('/edituser',[dashboardcontroller::class,'edituser'])->middleware('auth')->name('edituser');
+Route::post('/updateuser/{user}',[dashboardcontroller::class,'updateuser'])->middleware('auth')->name('updateuser');
 // properties
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
 Route::get('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');

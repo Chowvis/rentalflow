@@ -16,11 +16,13 @@
         </div>
 
         <div class="border border-gray-300 p-3 rounded-md bg-white">
-            <div class="flex flex-row mx-5 gap-4 font-bold text-gray-400 border-b border-gray-200">
+            <div class="flex flex-row mx-5 gap-5 font-bold text-gray-400 border-b border-gray-200">
                 <div class="py-2 cursor-pointer border-b-[3px] border-purple-500 text-purple-500" id="s1">
-                    <i class="fa-regular fa-user pr-3"></i>Personal</div>
-                <div class="py-2 cursor-pointer" id="s2">Attachments</div>
-                <div class="py-2 cursor-pointer " id="s3">Location</div>
+                    <i class="fa-regular fa-user pr-2"></i>Personal</div>
+                <div class="py-2 cursor-pointer" id="s2">
+                    <i class="fa-regular fa-file pr-2"></i>Attachments</div>
+                <div class="py-2 cursor-pointer " id="s3">
+                    <i class="fa-solid fa-location-dot pr-2"></i>Location</div>
             </div>
 
 
