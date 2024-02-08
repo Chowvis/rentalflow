@@ -22,6 +22,8 @@ class Property extends Model
         'description',
         'tenant_id',
         'tenant_name',
+        'lat',
+        'lng',
     ];
     public function user()
     {

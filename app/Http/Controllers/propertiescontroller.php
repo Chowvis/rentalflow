@@ -33,6 +33,8 @@ class propertiescontroller extends Controller
             'pincode' => 'required|max:6',
             'rent' => 'required',
             'description' => 'nullable|max:300',
+            'latitude' => 'nullable',
+            'longitude' => 'nullable',
         ]);
 
         $user = auth()->user();
@@ -48,6 +50,8 @@ class propertiescontroller extends Controller
             'pincode' => request()->get('pincode'),
             'rent' => request()->get('rent'),
             'description' => request()->get('description'),
+            'lat' => request()->get('latitude'),
+            'lng' => request()->get('longitude'),
         ]);
 
         return redirect()->route('properties')->with('success','Property is added successfully');

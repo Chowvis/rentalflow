@@ -26,8 +26,8 @@ return new class extends Migration
             $table->timestamps();
             $table -> foreignId('tenant_id')->nullable()->constrained();
             $table -> string('tenant_name')->nullable();
-            $table -> decimal('lat',15,12)->nullable();
-            $table -> decimal('lng',15,12)->nullable();
+            $table -> decimal('lat',18,15)->nullable();
+            $table -> decimal('lng',18,15)->nullable();
 
         });
     }

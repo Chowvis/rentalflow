@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     @vite('resources/css/app.css')
 </head>
 <body class="flex font-nunito">
@@ -68,20 +69,31 @@
         </div>
     </div>
     {{-- right content --}}
-    <div class="w-full flex flex-col">
+    <div class="w-full flex flex-col relative">
         <div class="border-b border-t h-16 sticky top-0 bg-white flex justify-end items-center px-5 ">
             <div class="h-16 flex items-center gap-4">
                 <div class="mr-2 rounded-full bg-blue-400 h-8 w-8 flex justify-center items-center font-bold text-white text-sm uppercase">
                     {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
                 </div>
-                <div class="">
+                <div class="cursor-pointer" id="menuButton">
                     <p class="text-sm font-bold text-gray-500">OWNER</p>
                     <p class="text-sm font-bold text-gray-500">{{Auth::user()->fname}}</p>{{--have to make an drop down here--}}
                 </div>
-                <form action="{{route('logout')}}" method="POST">
+
+                <div class="hidden absolute top-16 right-24 h-[190px] w-[200px]" id="menu">
+                    <div>gfhfgh</div>
+                    <div>fghfg</div>
+                    <div>fghhhhh</div>
+                </div>
+
+
+                {{-- <form action="{{route('logout')}}" method="POST">
                     @csrf
                     <button class="bg-red-500 px-3 py-2 rounded-md text-sm text-white hover:bg-red-900">Logout</button>
-                </form>
+                </form> --}}
+
+
+
             </div>
         </div>
         {{-- main content here --}}
@@ -99,5 +111,23 @@
         </footer>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
+    <script>
+        // JavaScript to toggle menu visibility
+        var menuButton = document.getElementById('menuButton');
+        var menu = document.getElementById('menu');
+
+        menuButton.addEventListener('click', function() {
+            menu.classList.toggle('hidden');
+        });
+
+        // Close the menu when clicked outside
+        document.addEventListener('click', function(event) {
+            var isClickInside = menuButton.contains(event.target) || menu.contains(event.target);
+
+            if (!isClickInside) {
+                menu.classList.add('hidden');
+            }
+        });
+    </script>
 </body>
 </html>

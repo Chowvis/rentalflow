@@ -82,7 +82,9 @@
                 </table>
 
                 <div id="attachment" class="hidden ">attachments</div>
-                <div id="location" class="hidden">Location</div>
+                <div id="location" class="hidden">
+                    <div id="mapshow" class="h-[600px] w-full"></div>
+                </div>
 
 
 
@@ -96,6 +98,8 @@
 
 
     </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+
     <script>
         var s1 = document.getElementById('s1');
         s1.addEventListener('click', function find1(){
@@ -118,6 +122,7 @@
         })
 
         var s3 = document.getElementById('s3');
+        var x= 0;
         s3.addEventListener('click', function find3(){
             document.getElementById('personal').setAttribute('class','hidden');
             document.getElementById('s3').classList.add('border-purple-500','border-b-[3px]','text-purple-500');
@@ -125,6 +130,27 @@
             document.getElementById('s1').classList.remove('border-purple-500','border-b-[3px]','text-purple-500');
             document.getElementById('attachment').setAttribute('class','hidden');
             document.getElementById('location').setAttribute('class','');
+
+            if(x === 0){
+                var coordinates;
+                var map = L.map('mapshow').setView([{{$property->lat}},{{$property->lng}}], 8);
+
+                // layers
+                var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                });
+
+                var myMarker = L.marker([{{$property->lat}},{{$property->lng}}]);
+                // myMarker.addTo(map) will add the marker
+                myMarker.addTo(map);
+                osm.addTo(map);
+                x+=1;
+            }
+
         })
+
+
+
     </script>
+
 @endsection
