@@ -135,7 +135,7 @@
 
             if(x === 0){
                 var coordinates;
-                var map = L.map('mapshow').setView([{{$property->lat}},{{$property->lng}}], 8);
+                var map = L.map('mapshow').setView([{{$property->lat}},{{$property->lng}}], 12);
 
                 // layers
                 var osm = L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {

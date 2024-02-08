@@ -75,32 +75,32 @@
                     <label for="city" class="text-sm mt-3 mb-2 font-bold">City</label>
                     <select name="city" id="" class="border border-gray-300 rounded-md p-2 text-sm">
                         <option value="" selected>Select city</option>
-                        <option value="Tawang"{{$property->city == 'Tawang' ? 'selected' : ''}}>TAWANG</option>
-                        <option value="West Kameng">WEST KAMENG</option>
-                        <option value="East Kameng">EAST KAMENG</option>
-                        <option value="Papum Pare">PAPUM PARE</option>
-                        <option value="">LOWER SUBANSIRI</option>
-                        <option value="">UPPER SUBANSIRI</option>
-                        <option value="">WEST SIANG</option>
-                        <option value="">EAST SIANG</option>
-                        <option value="">UPPER SIANG</option>
-                        <option value="">DIBANG VALLEY</option>
-                        <option value="">LOHIT</option>
-                        <option value="">CHANGLANG</option>
-                        <option value="">TIRAP</option>
-                        <option value="">KURUNG KUMEY</option>
-                        <option value="">LOWER DEBANG VALLEY</option>
-                        <option value="">ANJAW</option>
-                        <option value="">LONGDING</option>
-                        <option value="Namsai">NAMSAI</option>
-                        <option value="">KRA DADI</option>
-                        <option value="">SIANG</option>
-                        <option value="">LOWER SIANG</option>
-                        <option value="">KAMLE</option>
-                        <option value="">CAPITAL COMPLEX ITANAGAR</option>
-                        <option value="">PAKE KESSANG</option>
-                        <option value="">SHI YOMI</option>
-                        <option value="">LEPA RADA</option>
+                        <option value="TAWANG"{{$property->city == 'TAWANG' ? 'selected' : ''}}>TAWANG</option>
+                        <option value="WEST KAMENG"{{$property->city == 'WEST KAMENG' ? 'selected' : ''}}>WEST KAMENG</option>
+                        <option value="EAST KAMENG"{{$property->city == 'EAST KAMENG' ? 'selected' : ''}}>EAST KAMENG</option>
+                        <option value="PAPUM PARE"{{$property->city == 'PAPUM PARE' ? 'selected' : ''}}>PAPUM PARE</option>
+                        <option value="LOWER SUBANSIRI"{{$property->city == 'LOWER SUBANSIRI' ? 'selected' : ''}}>LOWER SUBANSIRI</option>
+                        <option value="UPPER SUBANSIRI"{{$property->city == 'UPPER SUBANSIRI' ? 'selected' : ''}}>UPPER SUBANSIRI</option>
+                        <option value="WEST SIANG"{{$property->city == 'WEST SIANG' ? 'selected' : ''}}>WEST SIANG</option>
+                        <option value="EAST SIANG"{{$property->city == 'EAST SIANG' ? 'selected' : ''}}>EAST SIANG</option>
+                        <option value="UPPER SIANG"{{$property->city == 'UPPER SIANG' ? 'selected' : ''}}>UPPER SIANG</option>
+                        <option value="DIBANG VALLEY"{{$property->city == 'DIBANG VALLEY' ? 'selected' : ''}}>DIBANG VALLEY</option>
+                        <option value="LOHIT"{{$property->city == 'LOHIT' ? 'selected' : ''}}>LOHIT</option>
+                        <option value="CHANGLANG"{{$property->city == 'CHANGLANG' ? 'selected' : ''}}>CHANGLANG</option>
+                        <option value="TIRAP"{{$property->city == 'TIRAP' ? 'selected' : ''}}>TIRAP</option>
+                        <option value="KURUNG KUMEY"{{$property->city == 'KURUNG KUMEY' ? 'selected' : ''}}>KURUNG KUMEY</option>
+                        <option value="LOWER DEBANG VALLEY"{{$property->city == 'LOWER DEBANG VALLEY' ? 'selected' : ''}}>LOWER DEBANG VALLEY</option>
+                        <option value="ANJAW"{{$property->city == 'ANJAW' ? 'selected' : ''}}>ANJAW</option>
+                        <option value="LONGDING"{{$property->city == 'LONGDING' ? 'selected' : ''}}>LONGDING</option>
+                        <option value="NAMSAI"{{$property->city == 'NAMSAI' ? 'selected' : ''}}>NAMSAI</option>
+                        <option value="KRA DADI"{{$property->city == 'KRA DADI' ? 'selected' : ''}}>KRA DADI</option>
+                        <option value="SIANG"{{$property->city == 'SIANG' ? 'selected' : ''}}>SIANG</option>
+                        <option value="LOWER SIANG"{{$property->city == 'LOWER SIANG' ? 'selected' : ''}}>LOWER SIANG</option>
+                        <option value="KAMLE"{{$property->city == 'KAMLE' ? 'selected' : ''}}>KAMLE</option>
+                        <option value="CAPITAL COMPLEX ITANAGAR"{{$property->city == 'CAPITAL COMPLEX ITANAGAR' ? 'selected' : ''}}>CAPITAL COMPLEX ITANAGAR</option>
+                        <option value="PAKE KESSANG"{{$property->city == 'PAKE KESSANG' ? 'selected' : ''}}>PAKE KESSANG</option>
+                        <option value="SHI YOMI"{{$property->city == 'SHI YOMI' ? 'selected' : ''}}>SHI YOMI</option>
+                        <option value="LEPA RADA"{{$property->city == 'LEPA RADA' ? 'selected' : ''}}>LEPA RADA</option>
                     </select>
                     @error('city')
                         <span class="text-red-500 text-sm">{{$message}}</span>
@@ -146,8 +146,8 @@
             <div class="p-3 pb-5">
                 <div class="h-80 w-full" id="map">
                     leaflet
-                    <input type="number" step="0.000000000000001" name="latitude" id="latitude" class="hidden" value="">
-                    <input type="number" step="0.000000000000001" name="longitude" id="longitude" class="hidden" value="">
+                    <input type="number" step="0.000000000000001" name="lat" id="latitude" class="hidden" value="">
+                    <input type="number" step="0.000000000000001" name="lng" id="longitude" class="hidden" value="">
                 </div>
             </div>
             <hr>
