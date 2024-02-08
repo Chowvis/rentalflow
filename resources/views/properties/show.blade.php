@@ -85,7 +85,7 @@
 
                 <div id="attachment" class="hidden ">attachments</div>
                 <div id="location" class="hidden">
-                    <div id="mapshow" class="h-[600px] w-full"></div>
+                    <div id="mapshow" class="h-[500px] w-full"></div>
                 </div>
 
 

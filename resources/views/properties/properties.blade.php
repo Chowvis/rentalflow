@@ -54,7 +54,7 @@
                 @foreach ($properties as $property)
                     <li class="flex flex-row py-4 text-sm items-center">
                         <div class="basis-4/12 uppercase flex items-center">
-                            <span class="bg-green-600 rounded-full w-10 h-10 text-white text-sm p-3 flex items-center justify-center">{{$property->title[0]}}</span>
+                            <span class="alphabet-div rounded-full w-10 h-10 text-white text-sm p-3 flex items-center justify-center">{{$property->title[0]}}</span>
                             <span class="pl-3 font-bold text-gray-900">{{$property->title}}</span>
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
@@ -125,5 +125,97 @@
 
 
     </div>
+    <script>
+        const divs = document.querySelectorAll('.alphabet-div');
 
+        divs.forEach(div => {
+            const letter = div.textContent.trim().toUpperCase();
+
+            // Set background color based on letter
+            switch(letter) {
+                case 'A':
+                    div.classList.add('bg-red-500');
+                    break;
+                case 'B':
+                    div.classList.add('bg-blue-300');
+                    break;
+                case 'C':
+                    div.classList.add('bg-green-500');
+                    break;
+                case 'D':
+                    div.classList.add('bg-purple-500');
+                    break;
+                case 'E':
+                    div.classList.add('bg-lime-500');
+                    break;
+                case 'F':
+                    div.classList.add('bg-gray-800');
+                    break;
+                case 'G':
+                    div.classList.add('bg-red-500');
+                    break;
+                case 'H':
+                    div.classList.add('bg-yellow-500');
+                    break;
+                case 'I':
+                    div.classList.add('bg-green-500');
+                    break;
+                case 'J':
+                    div.classList.add('bg-purple-500');
+                    break;
+                case 'K':
+                    div.classList.add('bg-lime-500');
+                    break;
+                case 'L':
+                    div.classList.add('bg-yellow-800');
+                    break;
+                case 'M':
+                    div.classList.add('bg-red-500');
+                    break;
+                case 'N':
+                    div.classList.add('bg-blue-500');
+                    break;
+                case 'O':
+                    div.classList.add('bg-green-700');
+                    break;
+                case 'P':
+                    div.classList.add('bg-yellow-500');
+                    break;
+                case 'Q':
+                    div.classList.add('bg-lime-500');
+                    break;
+                case 'R':
+                    div.classList.add('bg-green-800');
+                    break;
+                case 'S':
+                    div.classList.add('bg-red-500');
+                    break;
+                case 'T':
+                    div.classList.add('bg-blue-500');
+                    break;
+                case 'U':
+                    div.classList.add('bg-green-500');
+                    break;
+                case 'V':
+                    div.classList.add('bg-purple-500');
+                    break;
+                case 'W':
+                    div.classList.add('bg-gray-500');
+                    break;
+                case 'X':
+                    div.classList.add('bg-red-800');
+                    break;
+                case 'Y':
+                    div.classList.add('bg-red-500');
+                    break;
+                case 'Z':
+                    div.classList.add('bg-blue-500');
+                    break;
+
+                // Add more cases for other letters and colors
+                default:
+                    div.style.backgroundColor = 'gray'; // Default color
+            }
+        });
+    </script>
 @endsection
