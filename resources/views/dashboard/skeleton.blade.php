@@ -24,7 +24,7 @@
         <div class=" border-gray-200">
             <ul class="block h-full pt-4">
                 <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('dashboard')?'text-[#7f8dff]':''}}">
-                    <a href="{{route('dashboard')}}">
+                    <a href="{{route('dashboard')}}" class="">
                         <i class="fa-solid fa-chart-pie text-gray-500 text-lg w-8 group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('dashboard')?'text-[#7f8dff]':''}}"></i>
                         Dashboard
                     </a>

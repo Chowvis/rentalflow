@@ -1,7 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./resources/views/**/*.{blade.php,js,vue}",
-            // "./resources/dashboard/.blade.php",
+            "./resources/views/dashboard/.blade.php",
             ],
   theme: {
     fontFamily:{
