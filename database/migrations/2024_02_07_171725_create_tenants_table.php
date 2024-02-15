@@ -19,6 +19,7 @@ return new class extends Migration
             $table->bigInteger('contact_no');
             $table->string('email');
             $table->string('address');
+            $table->string('status')->nullable();
             $table->timestamps();
 
         });

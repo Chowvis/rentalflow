@@ -20,6 +20,7 @@ class Property extends Model
         'pincode',
         'rent',
         'description',
+        'status',
         'tenant_id',
         'tenant_name',
         'lat',

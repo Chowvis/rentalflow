@@ -50,6 +50,7 @@ class propertiescontroller extends Controller
             'pincode' => request()->get('pincode'),
             'rent' => request()->get('rent'),
             'description' => request()->get('description'),
+            'status' => 'Active',
             'lat' => request()->get('latitude'),
             'lng' => request()->get('longitude'),
         ]);
@@ -125,6 +126,25 @@ class propertiescontroller extends Controller
         // $property->save();
         // echo $property->tenant_id;
         // $property->update($ten);
+
+
+        }
+
+    public function deactivateproperty(Property $property){
+
+        $property->update([
+            'status' => 'Inactive',
+        ]);
+        return redirect()->route('properties');
+
+
+    }
+    public function activateproperty(Property $property){
+
+        $property->update([
+            'status' => 'Active',
+        ]);
+        return redirect()->route('properties');
 
 
     }

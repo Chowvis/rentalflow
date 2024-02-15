@@ -24,6 +24,7 @@ return new class extends Migration
             $table->integer('rent');
             $table->string('description')->nullable();
             $table->timestamps();
+            $table -> string('status')->nullable();
             $table -> foreignId('tenant_id')->nullable()->constrained();
             $table -> string('tenant_name')->nullable();
             $table -> decimal('lat',18,15)->nullable();

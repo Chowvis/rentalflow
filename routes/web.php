@@ -49,6 +49,9 @@ Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty
 Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
 Route::get('assigntenant/{property}',[propertiescontroller::class,'gotoassigntenant'])->middleware('auth')->name('goassign');
 Route::post('assignt/{property}',[propertiescontroller::class,'assigntenant'])->middleware('auth')->name('assign');
+
+Route::get('deactive/{property}',[propertiescontroller::class,'deactivateproperty'])->middleware('auth')->name('deactivate');
+Route::get('active/{property}',[propertiescontroller::class,'activateproperty'])->middleware('auth')->name('activate');
 // end properties
 
 

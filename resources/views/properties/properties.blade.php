@@ -58,7 +58,13 @@
                             <span class="pl-3 font-bold text-gray-900">{{$property->title}}</span>
                         </div>
                         <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
-                        <div class="basis-1/12">a</div>
+                        @if ($property->status==='Active')
+                            <div class="basis-1/12 font-bold text-green-500">{{$property->status}}</div>
+                        @endif
+                        @if ($property->status==='Inactive')
+                            <div class="basis-1/12 font-bold text-red-500">{{$property->status}}</div>
+                        @endif
+
                         <div class="basis-2/12 font-bold text-gray-500">{{($property->tenant_id!==null)?$property->tenant_name:'vacant'}}</div>
                         {{-- <div class="basis-2/12 flex items-center">
                             <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
@@ -72,22 +78,23 @@
                             </button>
 
                                 <!-- Dropdown menu -->
-                            <div id="{{$property->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                            <div id="{{$property->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 font-roboto">
                                 <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
                                     <li>
-                                    <a href="{{route('show', $property->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
-                                        <i class="fa-solid fa-eye px-3"></i> View
-                                    </a>
+                                        <a href="{{route('show', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-[12px] font-medium">
+                                            <i class="fa-solid fa-eye px-3"></i> View Details
+                                        </a>
                                     </li>
                                     <li>
-                                    <a href="{{route('edit', $property->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
-                                        <i class="fa-solid fa-user-pen px-3"></i> Edit
-                                    </a>
+                                        <a href="{{route('edit', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                            <i class="fa-solid fa-user-pen px-3"></i> Edit
+                                        </a>
                                     </li>
+                                    <hr>
                                     <li>
-                                    <a href="{{route('goassign', $property->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
-                                        <i class="fa-solid fa-ban px-3"></i> Assign Tenant
-                                    </a>
+                                        <a href="{{route('goassign', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                            <i class="fa-solid fa-user-check px-3"></i> Assign Tenant
+                                        </a>
 
                                     {{-- <select name="tenant_name" id="tenant" class="z-10 right-80">
                                         @foreach ($tenants as $tenant)
@@ -100,6 +107,22 @@
 
 
                                     </li>
+                                    <hr>
+                                    @if ($property->status==='Active')
+                                        <li>
+                                            <a href="{{route('deactivate',$property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                <i class="fa-solid fa-address-card px-3"></i> Deactivate
+                                            </a>
+                                        </li>
+                                    @endif
+                                    @if ($property->status==='Inactive')
+                                        <li>
+                                            <a href="{{route('activate',$property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                <i class="fa-regular fa-address-card px-3"></i> Activate
+                                            </a>
+                                        </li>
+                                    @endif
+
                                 </ul>
 
                             </div>
