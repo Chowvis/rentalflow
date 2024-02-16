@@ -112,6 +112,7 @@ class propertiescontroller extends Controller
             $tenant->update([
                 'property_id' => $property->id,
                 'property_name' => $property->title,
+                'payable_rent' => $property->rent,
 
                 // Update other fields as needed
             ]);

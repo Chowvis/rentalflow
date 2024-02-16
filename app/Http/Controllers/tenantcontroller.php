@@ -32,7 +32,8 @@ class tenantcontroller extends Controller
             'user_id'=>$user,
             'contact_no' => request()->get('contact_no'),
             'email' => request()->get('email'),
-            'address' => request()->get('address')
+            'address' => request()->get('address'),
+            'status' => 'Active',
         ]);
 
         return redirect()->route('tenants',)->with('success','Tenant has been registered successfully');
@@ -61,5 +62,23 @@ class tenantcontroller extends Controller
 
 
     }
+    public function deactivatetenant(Tenant $tenant){
 
+        $tenant->update([
+            'status' => 'Inactive',
+        ]);
+        return redirect()->route('tenants');
+
+
+    }
+    public function activatetenant(Tenant $tenant){
+
+        $tenant->update([
+            'status' => 'Active',
+        ]);
+        return redirect()->route('tenants');
+
+
+
+}
 }

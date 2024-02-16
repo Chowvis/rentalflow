@@ -63,6 +63,9 @@ Route::get('/viewtenant/{tenant}',[tenantcontroller::class,'show'])->middleware(
 Route::get('/edittenant/{tenant}',[tenantcontroller::class,'edittenant'])->middleware('auth')->name('editT');
 Route::post('updatetenant/{tenant}',[tenantcontroller::class,'updatetenant'])->middleware('auth')->name('updateT');
 
+Route::get('deactivet/{tenant}',[tenantcontroller::class,'deactivatetenant'])->middleware('auth')->name('deactivateT');
+Route::get('activet/{tenant}',[tenantcontroller::class,'activatetenant'])->middleware('auth')->name('activateT');
+
 // end tenants
 Route::get('/rent',[rentcontroller::class,'gotorent'])->middleware('auth')->name('rent');
 Route::get('/expenses',[expensescontroller::class,'gotoexpenses'])->middleware('auth')->name('expenses');

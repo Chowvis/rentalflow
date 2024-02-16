@@ -17,6 +17,7 @@ class Tenant extends Model
         'address',
         'property_name',
         'status',
+        'payable_rent',
     ];
     public function user()
     {

@@ -51,15 +51,20 @@
                             <div class="basis-3/12 flex items-center">
                                 <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3 flex items-center justify-center uppercase">{{$tenant->name[0]}}</span>
                                 <div class="flex flex-col">
-                                    <span class="pl-3 uppercase">{{$tenant->name}}</span>
-                                    <span class="pl-3 text-xs">{{$tenant->email}}</span>
+                                    <span class="pl-3 uppercase font-bold text-indigo-950">{{$tenant->name}}</span>
+                                    <span class="pl-3 text-xs ">{{$tenant->email}}</span>
                                 </div>
 
                             </div>
                             <div class="basis-2/12 text-gray-400 flex items-center">{{$tenant->property_name}}</div>
                             <div class="basis-2/12 flex items-center">{{$tenant->contact_no}}</div>
-                            <div class="basis-3/12 flex items-center"></div>
-                             <div class="basis-1/12 flex items-center">{{$tenant->property_id}}</div>
+                            <div class="basis-3/12 flex items-center">{{$tenant->payable_rent}}</div>
+                            @if ($tenant->status==='Active')
+                                <div class="basis-1/12 font-bold text-green-500 flex items-center justify-center">{{$tenant->status}}</div>
+                            @endif
+                            @if ($tenant->status==='Inactive')
+                                <div class="basis-1/12 font-bold text-red-500 flex items-center justify-center">{{$tenant->status}}</div>
+                            @endif
 
                             <div class="basis-1/12 flex items-center justify-end pr-10">
                                 {{-- <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
@@ -81,11 +86,22 @@
                                             <i class="fa-solid fa-user-pen px-3"></i> Edit
                                         </a>
                                         </li>
-                                        <li>
-                                        <a href="#" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
-                                            <i class="fa-solid fa-ban px-3"></i> Deactive
-                                        </a>
-                                        </li>
+                                        <hr>
+                                        @if ($tenant->status==='Active')
+                                            <li>
+                                                <a href="{{route('deactivateT',$tenant->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                    <i class="fa-solid fa-address-card px-3"></i> Deactivate
+                                                </a>
+                                            </li>
+                                        @endif
+                                        @if ($tenant->status==='Inactive')
+                                            <li>
+                                                <a href="{{route('activateT',$tenant->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                    <i class="fa-regular fa-address-card px-3"></i> Activate
+                                                </a>
+                                            </li>
+                                        @endif
+
                                     </ul>
 
                                 </div>
