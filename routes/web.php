@@ -30,16 +30,15 @@ use Illuminate\Routing\Controllers\Middleware;
 Route::get('/',[homepagecontroller::class,'home'])->name('homepage');
 Route::get('/signup',[registrationcontroller::class,'signup'])->name('signuppage');
 Route::post('/store',[storecontroller::class,'store'])->name('store');
-
 Route::get('/signin',[signincontroller::class,'signin'])->name('login');
 Route::post('/loggedin',[logincontroller::class,'login'])->name('loggedin');
 Route::post('/logout',[logincontroller::class,'logout'])->name('logout');
+
 // after login routes--->>>>
-
-
 Route::get('/dashboard',[dashboardcontroller::class,'gotodashboard'])->middleware('auth')->name('dashboard');
 Route::get('/edituser',[dashboardcontroller::class,'edituser'])->middleware('auth')->name('edituser');
 Route::post('/updateuser/{user}',[dashboardcontroller::class,'updateuser'])->middleware('auth')->name('updateuser');
+
 // properties
 Route::get('/properties',[propertiescontroller::class,'gotoproperties'])->middleware('auth')->name('properties');
 Route::get('/newproperty',[propertiescontroller::class,'addproperties'])->middleware('auth')->name('addproperty');
@@ -49,7 +48,6 @@ Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty
 Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
 Route::get('assigntenant/{property}',[propertiescontroller::class,'gotoassigntenant'])->middleware('auth')->name('goassign');
 Route::post('assignt/{property}',[propertiescontroller::class,'assigntenant'])->middleware('auth')->name('assign');
-
 Route::get('deactive/{property}',[propertiescontroller::class,'deactivateproperty'])->middleware('auth')->name('deactivate');
 Route::get('active/{property}',[propertiescontroller::class,'activateproperty'])->middleware('auth')->name('activate');
 // end properties
@@ -62,13 +60,13 @@ Route::post('/storetenant',[tenantcontroller::class,'storetenants'])->middleware
 Route::get('/viewtenant/{tenant}',[tenantcontroller::class,'show'])->middleware('auth')->name('showT');
 Route::get('/edittenant/{tenant}',[tenantcontroller::class,'edittenant'])->middleware('auth')->name('editT');
 Route::post('updatetenant/{tenant}',[tenantcontroller::class,'updatetenant'])->middleware('auth')->name('updateT');
-
 Route::get('deactivet/{tenant}',[tenantcontroller::class,'deactivatetenant'])->middleware('auth')->name('deactivateT');
 Route::get('activet/{tenant}',[tenantcontroller::class,'activatetenant'])->middleware('auth')->name('activateT');
-
 // end tenants
+
 Route::get('/rent',[rentcontroller::class,'gotorent'])->middleware('auth')->name('rent');
 Route::get('/expenses',[expensescontroller::class,'gotoexpenses'])->middleware('auth')->name('expenses');
+// settings
 Route::get('/settings',[settingscontroller::class,'gotosettings'])->middleware('auth')->name('settings');
-
+Route::post('/newpass',[settingscontroller::class,'changepassword'])->middleware('auth')->name('newpass');
 //<<<-----
