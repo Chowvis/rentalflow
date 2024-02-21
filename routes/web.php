@@ -47,6 +47,7 @@ Route::get('/viewproperty/{property}',[propertiescontroller::class,'show'])->mid
 Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty'])->middleware('auth')->name('edit');
 Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
 Route::get('assigntenant/{property}',[propertiescontroller::class,'gotoassigntenant'])->middleware('auth')->name('goassign');
+Route::get('unassigntenant/{property}',[propertiescontroller::class,'unassigntenant'])->middleware('auth')->name('unassign');
 Route::post('assignt/{property}',[propertiescontroller::class,'assigntenant'])->middleware('auth')->name('assign');
 Route::get('deactive/{property}',[propertiescontroller::class,'deactivateproperty'])->middleware('auth')->name('deactivate');
 Route::get('active/{property}',[propertiescontroller::class,'activateproperty'])->middleware('auth')->name('activate');
@@ -56,6 +57,7 @@ Route::get('active/{property}',[propertiescontroller::class,'activateproperty'])
 // Tenants
 Route::get('/tenants',[tenantcontroller::class,'gototenants'])->middleware('auth')->name('tenants');
 Route::get('/newtenant',[tenantcontroller::class,'addtenants'])->middleware('auth')->name('addtenant');
+
 Route::post('/storetenant',[tenantcontroller::class,'storetenants'])->middleware('auth')->name('storetenant');
 Route::get('/viewtenant/{tenant}',[tenantcontroller::class,'show'])->middleware('auth')->name('showT');
 Route::get('/edittenant/{tenant}',[tenantcontroller::class,'edittenant'])->middleware('auth')->name('editT');

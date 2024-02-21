@@ -13,7 +13,7 @@ class propertiescontroller extends Controller
         $properties = $user->properties; //relation are used here
         $tenants = $user->tenants;
 
-        return view('properties.properties',compact('properties'));
+        return view('properties.properties',compact('properties','tenants'));
     }
 
     public function addproperties(){
@@ -121,7 +121,7 @@ class propertiescontroller extends Controller
             return redirect()->route('properties')->with('success','Property is Updated successfully');
             }
 
-        return redirect()->route('properties')->with('failed','Property has already assigned');
+        // return redirect()->route('properties')->with('failed','Property has already assigned');
 
         // $property->tenant_id=request()->get('tenant_id');
         // $property->save();
@@ -130,6 +130,25 @@ class propertiescontroller extends Controller
 
 
         }
+
+    public function unassigntenant(Property $property,Tenant $tenant){
+
+        $tenant = Tenant::findOrFail($property->tenant_id);
+        $tenant->update([
+            'property_id' => null,
+            'property_name' => null,
+            'payable_rent' => null,
+
+            // Update other fields as needed
+        ]);
+        $property->tenant_id = null;
+        $property->tenant_name = null;
+        $property->save();
+
+
+        return redirect()->route('properties')->with('failed','Tenant has been removed');
+
+    }
 
     public function deactivateproperty(Property $property){
 

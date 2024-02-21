@@ -50,96 +50,146 @@
             </div>
             <hr>
             @if ($properties->count() > 0)
-            <ul class="px-5">
-                @foreach ($properties as $property)
-                    <li class="flex flex-row py-4 text-sm items-center">
-                        <div class="basis-4/12 uppercase flex items-center">
-                            <span class="alphabet-div rounded-full w-10 h-10 text-white text-sm p-3 flex items-center justify-center">{{$property->title[0]}}</span>
-                            <span class="pl-3 font-bold text-gray-900">{{$property->title}}</span>
-                        </div>
-                        <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
-                        @if ($property->status==='Active')
-                            <div class="basis-1/12 font-bold text-green-500">{{$property->status}}</div>
-                        @endif
-                        @if ($property->status==='Inactive')
-                            <div class="basis-1/12 font-bold text-red-500">{{$property->status}}</div>
-                        @endif
+                <ul class="px-5">
+                    @foreach ($properties as $property)
+                        <li class="flex flex-row py-4 text-sm items-center">
+                            <div class="basis-4/12 uppercase flex items-center">
+                                <span class="alphabet-div rounded-full w-10 h-10 text-white text-sm p-3 flex items-center justify-center">{{$property->title[0]}}</span>
+                                <span class="pl-3 font-bold text-gray-900">{{$property->title}}</span>
+                            </div>
+                            <div class="basis-4/12 text-gray-400">{{$property->address_1}}, {{$property->address_2}}, {{$property->pincode}}</div>
+                            @if ($property->status==='Active')
+                                <div class="basis-1/12 font-bold text-green-500">{{$property->status}}</div>
+                            @endif
+                            @if ($property->status==='Inactive')
+                                <div class="basis-1/12 font-bold text-red-500">{{$property->status}}</div>
+                            @endif
 
-                        <div class="basis-2/12 font-bold text-gray-500">{{($property->tenant_id!==null)?$property->tenant_name:'vacant'}}</div>
-                        {{-- <div class="basis-2/12 flex items-center">
-                            <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
-                            <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a>
-                        </div> --}}
-
-
-                        <div class="basis-1/12 flex items-center justify-end pr-10">
-                            <button id="dropdownMenuIconButton" data-dropdown-toggle="{{$property->id}}" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
-                                <i class="fa-solid fa-ellipsis-vertical"></i>
-                            </button>
-
-                                <!-- Dropdown menu -->
-                            <div id="{{$property->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 font-roboto">
-                                <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
-                                    <li>
-                                        <a href="{{route('show', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-[12px] font-medium">
-                                            <i class="fa-solid fa-eye px-3"></i> View Details
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('edit', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
-                                            <i class="fa-solid fa-user-pen px-3"></i> Edit
-                                        </a>
-                                    </li>
-                                    <hr>
-                                    <li>
-                                        <a href="{{route('goassign', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
-                                            <i class="fa-solid fa-user-check px-3"></i> Assign Tenant
-                                        </a>
-
-                                    {{-- <select name="tenant_name" id="tenant" class="z-10 right-80">
-                                        @foreach ($tenants as $tenant)
-                                            <option value="{{$tenant->name}}">{{$tenant->name}}</option>
-                                        @endforeach
-                                    </select> --}}
+                            <div class="basis-2/12 font-bold text-gray-500">{{($property->tenant_id!==null)?$property->tenant_name:'vacant'}}</div>
+                            {{-- <div class="basis-2/12 flex items-center">
+                                <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
+                                <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a>
+                            </div> --}}
 
 
+                            <div class="basis-1/12 flex items-center justify-end pr-10">
+                                <button id="dropdownMenuIconButton" data-dropdown-toggle="{{$property->id}}" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
+                                    <i class="fa-solid fa-ellipsis-vertical"></i>
+                                </button>
 
-
-
-                                    </li>
-                                    <hr>
-                                    @if ($property->status==='Active')
+                                    <!-- Dropdown menu -->
+                                <div id="{{$property->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 font-roboto">
+                                    <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
                                         <li>
-                                            <a href="{{route('deactivate',$property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
-                                                <i class="fa-solid fa-address-card px-3"></i> Deactivate
+                                            <a href="{{route('show', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-[12px] font-medium">
+                                                <i class="fa-solid fa-eye px-3"></i> View Details
                                             </a>
                                         </li>
-                                    @endif
-                                    @if ($property->status==='Inactive')
                                         <li>
-                                            <a href="{{route('activate',$property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
-                                                <i class="fa-regular fa-address-card px-3"></i> Activate
+                                            <a href="{{route('edit', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                <i class="fa-solid fa-user-pen px-3"></i> Edit
                                             </a>
                                         </li>
-                                    @endif
 
-                                </ul>
+                                        <hr>
+                                        <li>
+                                            {{-- <a href="{{route('goassign', $property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                <i class="fa-solid fa-user-check px-3"></i> Assign Tenant
+                                            </a> --}}
+                                            @if ($property->tenant_id===null)
+                                                <span id="" onclick="assign()" class=" cursor-pointer block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                    <i class="fa-solid fa-user-check px-3"></i> Assign Tenant
+                                                </span>
+                                            @else
+                                                <span id="unassigntenant" class="cursor-pointer block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                    <i class="fa-solid fa-user-check px-3"></i> Unassign Tenant
+                                                </span>
+                                            @endif
+
+                                        {{-- <select name="tenant_name" id="tenant" class="z-10 right-80">
+                                            @foreach ($tenants as $tenant)
+                                                <option value="{{$tenant->name}}">{{$tenant->name}}</option>
+                                            @endforeach
+                                        </select> --}}
+
+
+
+
+
+                                        </li>
+                                        <hr>
+                                        @if ($property->status==='Active')
+                                            <li>
+                                                <a href="{{route('deactivate',$property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                    <i class="fa-solid fa-address-card px-3"></i> Deactivate
+                                                </a>
+                                            </li>
+                                        @endif
+                                        @if ($property->status==='Inactive')
+                                            <li>
+                                                <a href="{{route('activate',$property->id)}}" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                    <i class="fa-regular fa-address-card px-3"></i> Activate
+                                                </a>
+                                            </li>
+                                        @endif
+
+                                    </ul>
+
+
+
+                                </div>
+                                {{-- assign tenant popup --}}
+                                <div id="model_1" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex justify-center items-center font-roboto">
+                                    <form action="{{route('goassign',$property->id)}}" method="" class="bg-white p-5 rounded-lg flex flex-col">
+                                        <label for="old_password" class="text-sm font-medium pb-3">Old Password</label>
+                                        <select name="tenant" id="">
+                                            @foreach ($tenants as $tenant)
+                                                @if ($tenant->property_id === null)
+                                                    <option value="{{$tenant->id}}">{{$tenant->name}}</option>
+                                                @endif
+
+                                            @endforeach
+
+                                        </select>
+                                        <button>Assign</button>
+                                        {{-- @error('')
+                                            <span class="text-red-500 text-sm">{{$message}}</span>
+                                        @enderror --}}
+                                    </form>
+                                </div>
+
+
+                                {{-- unassign tenant popup --}}
+                                <div id="model_2" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex justify-center items-center font-roboto">
+                                    <form action="{{route('unassign',$property->id)}}" method="" class="bg-white p-5 rounded-lg flex flex-col justify-center">
+                                        <label for="old_password" class="text-sm font-medium pb-3 px-10 text-center text-lg">Are You Sure?</label>
+                                        <div class="flex items-center gap-5">
+                                            <button id="save" class="bg-red-500 text-white py-2 px-3 rounded-md text-sm font-bold hover:bg-red-800">
+                                                <i class="fa-solid fa-check pr-2"></i>
+                                                Confirm
+                                            </button>
+                                            <span id="closeModal" class=" px-3 py-2 rounded-lg text-sm font-bold border border-gray-700 cursor-pointer">Cancel</span>
+                                        </div>
+
+
+                                    </form>
+                                </div>
+
 
                             </div>
 
+                        </li>
 
-                        </div>
-
-                    </li>
-
-                    <hr>
+                        <hr>
 
 
 
-                @endforeach
-            </ul>
+                    @endforeach
+                </ul>
 
-        @endif
+            @endif
+
+
         </div>
 
 
@@ -148,6 +198,40 @@
 
 
     </div>
+    <script>
+        function assign(){
+
+            const modal = document.getElementById('model_1');
+            modal.classList.remove('hidden');
+            // const closeModalButton = document.getElementById('closeModal');
+            // closeModalButton.addEventListener('click', () => {
+            //     modal.classList.add('hidden');
+            // });
+            window.addEventListener('click', (event) => {
+            if (event.target === modal)//checking if any click is been made outside the form
+            {
+                modal.classList.add('hidden');
+            }
+            });
+        }
+
+
+        const id2 = document.getElementById('unassigntenant');
+        id2.addEventListener('click', (event) => {
+            const modal2 = document.getElementById('model_2');
+            modal2.classList.remove('hidden');
+            const closeModalButton = document.getElementById('closeModal');
+            closeModalButton.addEventListener('click', () => {
+                modal2.classList.add('hidden');
+            });
+            window.addEventListener('click', (event) => {
+            if (event.target === modal2)//checking if any click is been made outside the form
+            {
+                modal2.classList.add('hidden');
+            }
+            });
+        });
+    </script>
     <script>
         const divs = document.querySelectorAll('.alphabet-div');
 
