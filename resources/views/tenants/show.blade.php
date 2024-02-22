@@ -27,6 +27,7 @@
 
                 <table class="border border-gray-300 w-full border-collapse text-gray-400 font-roboto text-sm">
                     {{-- image --}}
+
                     <tr class="">
                         <th class="border border-gray-300 w-1/5 border-collapse p-4">Tenant Id</th>
                         <td class="border border-gray-300 w-full border-collapse px-3">

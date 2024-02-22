@@ -41,7 +41,7 @@
                 <div class="basis-2/12">Property</div>
                 <div class="basis-2/12">Contact</div>
                 <div class="basis-3/12">Payable Rent(₹)</div>
-                <div class="basis-1/12">Status</div>
+                <div class="basis-1/12 text-center">Status</div>
             </div>
             <hr>
             @if ($tenants->count() > 0)
