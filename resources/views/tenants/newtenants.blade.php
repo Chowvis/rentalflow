@@ -15,9 +15,12 @@
             </a>
         </div>
 
-        <form action="{{route('storetenant')}}" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST">
+        <form action="{{route('storetenant')}}" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="grid lg:grid-cols-2 grid-cols-1 pb-5">
+                <div class="flex flex-col p-3">
+                    <input type="file" name="image" placeholder="Enter image" accept="image/*" class="border border-gray-300 rounded-md p-2 text-sm">
+                </div>
                 <div class="flex flex-col p-3">
                     <label for="name" class="text-sm mt-5 mb-2 font-bold">Name</label>
                     <input type="text" name="name" placeholder="Enter name" class="border border-gray-300 rounded-md p-2 text-sm" value="{{old('name')}}">

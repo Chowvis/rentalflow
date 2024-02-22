@@ -35,6 +35,12 @@ class tenantcontroller extends Controller
             'address' => request()->get('address'),
             'status' => 'Active',
         ]);
+        if(request()->has('image')){
+            $path = request()->file('image')->store($user.'/Tenants'.$store->id.'/Documents','public');
+            $validate['image'] = $path;
+            $store->image = $validate['image'];
+            $store->save();
+        }
 
         return redirect()->route('tenants',)->with('success','Tenant has been registered successfully');
     }

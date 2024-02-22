@@ -140,9 +140,10 @@
                                 </div>
                                 {{-- assign tenant popup --}}
                                 <div id="model_1" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex justify-center items-center font-roboto">
-                                    <form action="{{route('goassign',$property->id)}}" method="" class="bg-white p-5 rounded-lg flex flex-col">
-                                        <label for="old_password" class="text-sm font-medium pb-3">Old Password</label>
-                                        <select name="tenant" id="">
+                                    <form action="{{route('assign',$property->id)}}" method="post" class="bg-white p-5 rounded-lg flex flex-col">
+                                        @csrf
+                                        <label for="tenant" class="text-sm font-medium pb-3">Assign tenant</label>
+                                        <select name="tenant" id="" class="border border-slate-500 rounded-sm p-2 ">
                                             @foreach ($tenants as $tenant)
                                                 @if ($tenant->property_id === null)
                                                     <option value="{{$tenant->id}}">{{$tenant->name}}</option>
@@ -151,6 +152,9 @@
                                             @endforeach
 
                                         </select>
+                                        <label for="rent" class="text-sm font-medium pb-3 after:content-['*'] after:ml-0.5 after:text-red-500">Rent</label>
+                                        <input type="text" name="rent" value="{{$property->rent}}" class="border border-gray-300 rounded-md p-2 text-sm">
+
                                         <button>Assign</button>
                                         {{-- @error('')
                                             <span class="text-red-500 text-sm">{{$message}}</span>
