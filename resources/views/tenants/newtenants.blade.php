@@ -21,8 +21,8 @@
             <div class="relative h-[120px] flex justify-center">
                 <div class="flex p-3 justify-center absolute -top-10">
                     <div class=" flex h-32 w-32 justify-center rounded-full items-center bg-slate-100 relative shadow-lg ">
-                        <div class="h-28 w-28 flex justify-center items-center">
-                            <img src="images/hero-img.png"  alt="">
+                        <div class="h-28 w-28 flex justify-center overflow-hidden rounded-full items-center">
+                            <img src="images/hero-img.png" class="h-28 w-28 object-cover"  alt="">
                         </div>
 
                         <input type="file" name="image" id="file" accept="image/*" class="hidden ">
