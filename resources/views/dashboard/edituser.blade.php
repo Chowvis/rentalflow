@@ -17,6 +17,21 @@
 
         <form action="{{route('updateuser',$user->id)}}" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST">
             @csrf
+            {{-- image file --}}
+            <div class="relative h-[120px] flex justify-center">
+                <div class="flex p-3 justify-center absolute -top-10">
+                    <div class=" flex h-32 w-32 justify-center rounded-full items-center bg-slate-100 relative shadow-lg ">
+                        <div class="h-28 w-28 flex justify-center overflow-hidden rounded-full items-center">
+                            <img src="images/hero-img.png" class="h-28 w-28 object-cover"  alt="">
+                        </div>
+
+                        <input type="file" name="image" id="file" accept="image/*" class="hidden ">
+                        <label for="file" class="cursor-pointer absolute  -bottom-4 flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-lg hover:bg-gray-300">
+                            <i class="fa-solid fa-pen text-xs text-gray-500"></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
             <div class="grid lg:grid-cols-2 grid-cols-1 pb-5">
                 <div class="flex flex-col p-3">
                     <label for="fname" class="text-sm mt-5 mb-2 font-bold">First Name</label>

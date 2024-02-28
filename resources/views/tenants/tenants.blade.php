@@ -49,7 +49,19 @@
                     @foreach ($tenants as $tenant)
                         <li class="flex flex-row py-4 text-sm">
                             <div class="basis-3/12 flex items-center">
-                                <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3 flex items-center justify-center uppercase">{{$tenant->name[0]}}</span>
+                                @if ($tenant->image === null)
+                                    <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3
+                                    flex items-center justify-center uppercase">
+                                    {{$tenant->name[0]}}
+                                    </span>
+                                @else
+                                    <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm overflow-hidden
+                                    flex items-center justify-center uppercase">
+                                    <img src="/storage/{{$tenant->image}}" class="w-10 h-10" alt="">
+
+                                    </span>
+                                @endif
+
                                 <div class="flex flex-col">
                                     <span class="pl-3 uppercase font-bold text-indigo-950">{{$tenant->name}}</span>
                                     <span class="pl-3 text-xs ">{{$tenant->email}}</span>

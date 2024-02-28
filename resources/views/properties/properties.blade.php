@@ -97,11 +97,11 @@
                                                 <i class="fa-solid fa-user-check px-3"></i> Assign Tenant
                                             </a> --}}
                                             @if ($property->tenant_id===null)
-                                                <span id="" onclick="assign()" class=" cursor-pointer block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                <span  onclick="assign({{$property->id}})" class=" cursor-pointer block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
                                                     <i class="fa-solid fa-user-check px-3"></i> Assign Tenant
                                                 </span>
                                             @else
-                                                <span id="unassigntenant" class="cursor-pointer block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
+                                                <span onclick="unassign({{$property->id}})" class="cursor-pointer block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-100 dark:hover:text-blue-500 text-xs font-medium">
                                                     <i class="fa-solid fa-user-check px-3"></i> Unassign Tenant
                                                 </span>
                                             @endif
@@ -140,7 +140,7 @@
                                 </div>
                                 {{-- assign tenant popup --}}
                                 <div id="model_1" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex justify-center items-center font-roboto">
-                                    <form action="{{route('assign',$property->id)}}" method="post" class="bg-white p-5 rounded-lg flex flex-col">
+                                    <form id="form1" action="{{route('assign',$property->id)}}" method="post" class="bg-white p-5 rounded-lg flex flex-col">
                                         @csrf
                                         <label for="tenant" class="text-sm font-medium pb-3">Assign tenant</label>
                                         <select name="tenant" id="" class="border border-slate-500 rounded-sm p-2 ">
@@ -165,7 +165,7 @@
 
                                 {{-- unassign tenant popup --}}
                                 <div id="model_2" class="hidden fixed inset-0 z-50 overflow-auto bg-gray-900 bg-opacity-50 flex justify-center items-center font-roboto">
-                                    <form action="{{route('unassign',$property->id)}}" method="" class="bg-white p-5 rounded-lg flex flex-col justify-center">
+                                    <form id="form2" action="{{route('unassign',$property->id)}}" method="" class="bg-white p-5 rounded-lg flex flex-col justify-center">
                                         <label for="old_password" class="text-sm font-medium pb-3 px-10 text-center text-lg">Are You Sure?</label>
                                         <div class="flex items-center gap-5">
                                             <button id="save" class="bg-red-500 text-white py-2 px-3 rounded-md text-sm font-bold hover:bg-red-800">
@@ -203,9 +203,12 @@
 
     </div>
     <script>
-        function assign(){
+        function assign(id){
 
             const modal = document.getElementById('model_1');
+            const form1 = document.getElementById('form1');
+
+            form1.action = "{{route('assign',$property->id)}}".replace({{$property->id}},id);
             modal.classList.remove('hidden');
             // const closeModalButton = document.getElementById('closeModal');
             // closeModalButton.addEventListener('click', () => {
@@ -219,22 +222,26 @@
             });
         }
 
+        function unassign(id){
+                const modal2 = document.getElementById('model_2');
+                const form2 = document.getElementById('form2');
 
-        const id2 = document.getElementById('unassigntenant');
-        id2.addEventListener('click', (event) => {
-            const modal2 = document.getElementById('model_2');
-            modal2.classList.remove('hidden');
-            const closeModalButton = document.getElementById('closeModal');
-            closeModalButton.addEventListener('click', () => {
-                modal2.classList.add('hidden');
-            });
-            window.addEventListener('click', (event) => {
-            if (event.target === modal2)//checking if any click is been made outside the form
-            {
-                modal2.classList.add('hidden');
-            }
-            });
-        });
+                form2.action = "{{route('unassign',$property->id)}}".replace({{$property->id}},id);
+                modal2.classList.remove('hidden');
+                const closeModalButton = document.getElementById('closeModal');
+                closeModalButton.addEventListener('click', () => {
+                    modal2.classList.add('hidden');
+                });
+                window.addEventListener('click', (event) => {
+                if (event.target === modal2)//checking if any click is been made outside the form
+                {
+                    modal2.classList.add('hidden');
+                }
+                });
+
+        }
+
+
     </script>
     <script>
         const divs = document.querySelectorAll('.alphabet-div');

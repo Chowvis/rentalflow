@@ -46,7 +46,7 @@ Route::post('/storeproperty',[propertiescontroller::class,'storeproperties'])->m
 Route::get('/viewproperty/{property}',[propertiescontroller::class,'show'])->middleware('auth')->name('show');
 Route::get('/editproperty/{property}',[propertiescontroller::class,'editproperty'])->middleware('auth')->name('edit');
 Route::post('updateproperty/{property}',[propertiescontroller::class,'updateproperty'])->middleware('auth')->name('update');
-Route::get('assigntenant/{property}',[propertiescontroller::class,'gotoassigntenant'])->middleware('auth')->name('goassign');
+// Route::get('assigntenant/{property}',[propertiescontroller::class,'gotoassigntenant'])->middleware('auth')->name('goassign');
 Route::get('unassigntenant/{property}',[propertiescontroller::class,'unassigntenant'])->middleware('auth')->name('unassign');
 Route::post('assignt/{property}',[propertiescontroller::class,'assigntenant'])->middleware('auth')->name('assign');
 Route::get('deactive/{property}',[propertiescontroller::class,'deactivateproperty'])->middleware('auth')->name('deactivate');
