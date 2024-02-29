@@ -203,7 +203,8 @@
 
     </div>
     <script>
-        function assign(id){
+        @if ($properties->count() > 0)
+            function assign(id){
 
             const modal = document.getElementById('model_1');
             const form1 = document.getElementById('form1');
@@ -220,9 +221,9 @@
                 modal.classList.add('hidden');
             }
             });
-        }
+            }
 
-        function unassign(id){
+            function unassign(id){
                 const modal2 = document.getElementById('model_2');
                 const form2 = document.getElementById('form2');
 
@@ -239,7 +240,9 @@
                 }
                 });
 
-        }
+            }
+        @endif
+
 
 
     </script>

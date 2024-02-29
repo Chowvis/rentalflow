@@ -22,7 +22,12 @@
                 <div class="flex p-3 justify-center absolute -top-10">
                     <div class=" flex h-32 w-32 justify-center rounded-full items-center bg-slate-100 relative shadow-lg ">
                         <div class="h-28 w-28 flex justify-center overflow-hidden rounded-full items-center">
-                            <img src="images/hero-img.png" class="h-28 w-28 object-cover"  alt="">
+                            @if (($user->image)===null)
+                                <img src="images/hero-img.png" class="h-28 w-28 object-cover"  alt="">
+                            @else
+                                <img src="/storage/{{$user->image}}" class=" w-28 object-cover" alt="">
+                            @endif
+
                         </div>
 
                         <input type="file" name="image" id="image" accept="image/*" class="hidden ">

@@ -72,8 +72,13 @@
     <div class="w-full flex flex-col relative">
         <div class="border-b border-t h-16 sticky top-0 bg-white flex justify-end items-center px-5 ">
             <div class="h-16 flex items-center gap-4">
-                <div class="mr-2 rounded-full bg-blue-400 h-8 w-8 flex justify-center items-center font-bold text-white text-sm uppercase">
-                    {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
+                <div class="mr-2 rounded-full bg-blue-100 h-8 w-8 flex justify-center overflow-hidden items-center font-bold text-white text-sm uppercase">
+                    @if ((Auth::user()->image) === null)
+                        {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
+                    @else
+                        <img src="/storage/{{Auth::user()->image}}" alt="">
+                    @endif
+
                 </div>
                 <div class="cursor-pointer" id="menuButton">
                     <p class="text-xs font-semibold text-gray-500">OWNER</p>
@@ -86,8 +91,13 @@
                 <div class="hidden absolute top-16 right-24 h-[250px] w-[278px] rounded-md
                           bg-white border-t-[3px] border-blue-400 shadow-lg" id="menu">
                     <div class="flex gap-2 items-center bg-slate-100 p-5">
-                        <div class="mr-2 rounded-full bg-blue-400 h-10 w-10 flex justify-center items-center font-bold text-white text-sm uppercase">
-                            {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
+                        <div class="mr-2 rounded-full bg-blue-100 h-10 w-10 flex justify-center overflow-hidden items-center font-bold text-white text-sm uppercase">
+                            @if ((Auth::user()->image) === null)
+                                {{Auth::user()->fname[0]}}{{Auth::user()->lname[0]}}
+                            @else
+                               <img src="/storage/{{Auth::user()->image}}" alt="">
+                            @endif
+
                         </div>
                         <div>
                             <p class="text-sm font-bold text-gray-500">{{Auth::user()->fname}} {{Auth::user()->lname}}</p>{{--have to make an drop down here--}}
@@ -99,7 +109,7 @@
                             <a href="{{route('edituser')}}"><i class="fa-solid fa-user pr-2"></i>View Profile</a>
                         </div>
                         <div class="py-2 text-sm font-bold text-slate-700 hover:text-blue-400">
-                            <a href=""><i class="fa-solid fa-camera pr-2"></i>Change Profile Picture</a>
+                            <a href="{{route('edituser')}}"><i class="fa-solid fa-camera pr-2"></i>Change Profile Picture</a>
                         </div>
                     </div>
 
