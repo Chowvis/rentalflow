@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <form action="{{route('updateuser',$user->id)}}" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST">
+        <form action="{{route('updateuser',$user->id)}}" enctype="multipart/form-data" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST">
             @csrf
             {{-- image file --}}
             <div class="relative h-[120px] flex justify-center">
@@ -25,8 +25,8 @@
                             <img src="images/hero-img.png" class="h-28 w-28 object-cover"  alt="">
                         </div>
 
-                        <input type="file" name="image" id="file" accept="image/*" class="hidden ">
-                        <label for="file" class="cursor-pointer absolute  -bottom-4 flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-lg hover:bg-gray-300">
+                        <input type="file" name="image" id="image" accept="image/*" class="hidden ">
+                        <label for="image" class="cursor-pointer absolute  -bottom-4 flex items-center justify-center w-8 h-8 bg-white rounded-full shadow-lg hover:bg-gray-300">
                             <i class="fa-solid fa-pen text-xs text-gray-500"></i>
                         </label>
                     </div>

@@ -57,7 +57,7 @@
                                 @else
                                     <span class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm overflow-hidden
                                     flex items-center justify-center uppercase">
-                                    <img src="/storage/{{$tenant->image}}" class="w-10 h-10" alt="">
+                                    <img src="/storage/{{$tenant->image}}" class="w-10" alt="">
 
                                     </span>
                                 @endif
