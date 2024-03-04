@@ -89,7 +89,7 @@
                 </div>
 
                 <div class="hidden absolute top-16 right-24 h-[250px] w-[278px] rounded-md
-                          bg-white border-t-[3px] border-blue-400 shadow-lg" id="menu">
+                          bg-white border-t-[3px] border-blue-400 shadow-lg -z-50" id="menu">
                     <div class="flex gap-2 items-center bg-slate-100 p-5">
                         <div class="mr-2 rounded-full bg-blue-100 h-10 w-10 flex justify-center overflow-hidden items-center font-bold text-white text-sm uppercase">
                             @if ((Auth::user()->image) === null)
