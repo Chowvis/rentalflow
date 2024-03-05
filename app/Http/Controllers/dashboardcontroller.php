@@ -9,7 +9,10 @@ use Illuminate\Support\Facades\Storage;
 class dashboardcontroller extends Controller
 {
     public function gotodashboard(){
-        return view('dashboard.dashboard');
+        $user = auth()->user();
+        $properties = $user->properties; //relation are used here
+        $tenants = $user->tenants;
+        return view('dashboard.dashboard',compact('properties','tenants'));
     }
 
     public function edituser(){

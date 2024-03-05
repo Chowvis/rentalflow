@@ -25,8 +25,8 @@
                     <p class="font-bold text-lg">Active Properties</p>
                     <i class="fa-solid fa-circle-dot text-gray-400"></i>
                 </div>
-                <div>
-                    <canvas id="myChart"></canvas>
+                <div class="h-28 w-52">
+                    <canvas id="myChart" class=""></canvas>
                 </div>
             </div>
 
@@ -61,21 +61,43 @@
         new Chart(ctx, {
           type: 'bar',
           data: {
-            labels: ['Red'],
+            labels: [''],
             datasets: [{
-              label: '# of Votes',
-              data: [2],
-              borderWidth: 1,
-              borderColor: '#FF6384',
-              backgroundColor: '#FFB1C1',
+
+                barThickness: 60,
+                maxBarThickness: 60,
+                minBarLength: 5,
+                label: '',
+                data: [{{count($properties)}}],
+                borderWidth: 2,
+                borderColor: '#FFEAA7',
+                backgroundColor: '#FBFADA',
             }]
           },
           options: {
+            plugins: {
+
+                legend: {
+                    display: false ,
+                },
+
+                onHover: {
+                    lebels:{
+                        text: 'hello',
+                    }
+
+                },
+            },
             scales: {
               y: {
+                display:false,
                 beginAtZero: true
+              },
+              x:{
+                display: false,
               }
-            }
+            },
+
           }
         });
       </script>
