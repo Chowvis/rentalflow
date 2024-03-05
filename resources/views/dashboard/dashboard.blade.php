@@ -25,6 +25,9 @@
                     <p class="font-bold text-lg">Active Properties</p>
                     <i class="fa-solid fa-circle-dot text-gray-400"></i>
                 </div>
+                <div>
+                    <canvas id="myChart"></canvas>
+                </div>
             </div>
 
             <div class="bg-white py-2 px-4 h-36 border border-slate-300 rounded-md">
@@ -51,5 +54,30 @@
         </div>
 
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Red'],
+            datasets: [{
+              label: '# of Votes',
+              data: [2],
+              borderWidth: 1,
+              borderColor: '#FF6384',
+              backgroundColor: '#FFB1C1',
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
 @endsection
 
