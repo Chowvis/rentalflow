@@ -15,7 +15,7 @@
 </head>
 <body class="flex font-nunito">
     {{-- left content --}}
-    <div class="flex flex-col sticky left-0 top-0 h-screen w-300 border-r border-gray-200">
+    <div id="leftSidebar" class=" flex flex-col sticky left-0 top-0 h-screen w-300 border-r border-gray-200">
         {{-- logo --}}
         <div class="h-16 flex justify-start items-center pl-5 border-b">
             <img class="h-8" src="/images/logo.png" alt="">
@@ -162,6 +162,24 @@
                 menu.classList.add('hidden');
             }
         });
+    </script>
+    <script>
+        function toggleMenuVisibility() {
+        const screenWidth = window.innerWidth;
+
+        // Hide menu on tablet view (screen width less than or equal to 768px)
+        if (screenWidth <= 1200) {
+            document.getElementById('leftSidebar').classList.add('hidden');
+        } else {
+            document.getElementById('leftSidebar').classList.remove('hidden');
+        }
+}
+
+        // Initial call to toggleMenuVisibility() when the page loads
+        toggleMenuVisibility();
+
+        // Event listener for resizing the window
+        window.addEventListener('resize', toggleMenuVisibility);
     </script>
 </body>
 </html>

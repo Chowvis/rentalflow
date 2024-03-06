@@ -49,15 +49,16 @@
 
         </div>
         {{-- third section graph view --}}
-        <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 p-3 grid-row-4">
-            <div class="bg-white row-span-3 col-span-2 py-2 px-4 border border-slate-300 rounded-md h-570">
+        {{-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 p-3 grid-row-4">
+            <div class="bg-white row-span-3 lg:col-span-2 col-span-3 border border-slate-300 rounded-md p-4 sm:h-96">
 
                 <div class="w-full h-full p-2">
                     <canvas id="rentline" class=" w-full"></canvas>
                 </div>
+
             </div>
-{{-- rent --}}
-            <div class="bg-white row-span-3 col-span-1 border border-slate-300 rounded-md p-4 sm:h-570">
+
+            <div class="bg-white row-span-3 lg:col-span-1 col-span-3 border border-slate-300 rounded-md p-4 sm:h-96">
                 <div class="w-full h-full p-2">
                     <canvas id="rentdonut" class=" w-full"></canvas>
                 </div>
@@ -70,6 +71,22 @@
             <div class="bg-white row-span-1 col-span-1 border border-slate-300 rounded-md">
                 hdfgh
             </div>
+        </div> --}}
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+            <div class="col-span-2  p-3 lg:h-96 md:h-96 sm:h-64">
+
+                <div class="w-full h-full flex justify-center items-center p-2 border border-slate-300 rounded-md bg-white ">
+                    <canvas id="rentline" class=" w-full"></canvas>
+                </div>
+            </div>
+
+            <div class="col-span-1 p-3 lg:h-96 h-96">
+                <div class="w-full h-full flex justify-center items-center p-2 border border-slate-300 rounded-md bg-white ">
+                    <canvas id="rentdonut" class=" w-full"></canvas>
+                </div>
+            </div>
+
+
         </div>
 
     </div>
@@ -165,7 +182,7 @@
                 borderWidth: 1,
 
                 // borderColor: ['rgba(237,227,74,0.8)'],
-                backgroundColor: ['rgba(250, 247,200,100.5)','rgba(22, 100,203,0.7)'],
+                backgroundColor: ['#F6995C','#51829B'],
                 hoverOffset:-10,
 
             }]
@@ -185,8 +202,8 @@
                 borderWidth: 2,
 
 
-                borderColor: ['rgba(237,227,74,0.8)'],
-                backgroundColor: ['rgba(22, 100,203,0.7)'],
+                borderColor: ['#1B3C73'],
+                backgroundColor: ['#51829B'],
                 hoverOffset:-10,
 
             }]
