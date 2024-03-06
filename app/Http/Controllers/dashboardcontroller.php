@@ -10,9 +10,11 @@ class dashboardcontroller extends Controller
 {
     public function gotodashboard(){
         $user = auth()->user();
-        $properties = $user->properties; //relation are used here
-        $tenants = $user->tenants;
-        return view('dashboard.dashboard',compact('properties','tenants'));
+        $properties = $user->properties->where('status','Active');
+        $properT = $user->properties;//relation are used here
+        $tenants = $user->tenants->where('status','Active');
+        $tenanT = $user->tenants;
+        return view('dashboard.dashboard',compact('properties','tenants','properT','tenanT'));
     }
 
     public function edituser(){
