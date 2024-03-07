@@ -11,7 +11,7 @@
         {{-- first section --}}
         <div class="flex justify-between p-3 h-24 items-center">
             <div>
-                <p class="text-gray-800 font-bold text-3xl">Dashboard</p>
+                <p class="text-gray-800 font-bold text-2xl">Dashboard</p>
                 <p class="py-2 font-semibold text-gray-400">Monthly statics.</p>
             </div>
             <button class="bg-white border border-gray-300 py-2 px-5 rounded-md text-sm font-bold ">Last 30 days</button>
@@ -48,30 +48,7 @@
             </div>
 
         </div>
-        {{-- third section graph view --}}
-        {{-- <div class="grid grid-cols-1 lg:grid-cols-3 gap-5 p-3 grid-row-4">
-            <div class="bg-white row-span-3 lg:col-span-2 col-span-3 border border-slate-300 rounded-md p-4 sm:h-96">
-
-                <div class="w-full h-full p-2">
-                    <canvas id="rentline" class=" w-full"></canvas>
-                </div>
-
-            </div>
-
-            <div class="bg-white row-span-3 lg:col-span-1 col-span-3 border border-slate-300 rounded-md p-4 sm:h-96">
-                <div class="w-full h-full p-2">
-                    <canvas id="rentdonut" class=" w-full"></canvas>
-                </div>
-            </div>
-
-            <div class="bg-white row-span-1 col-span-2 border border-slate-300 rounded-md h-60">
-                fghfg
-            </div>
-
-            <div class="bg-white row-span-1 col-span-1 border border-slate-300 rounded-md">
-                hdfgh
-            </div>
-        </div> --}}
+        {{-- third section --}}
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2  p-3 lg:h-96 md:h-96 sm:h-64">
 
@@ -87,6 +64,30 @@
             </div>
 
 
+        </div>
+
+        {{-- 4th section --}}
+
+        <div class="grid grid-cols-1 lg:grid-cols-3">
+            <div class="col-span-2  p-3">
+                <div class="w-full h-full flex flex-col justify-center  border border-slate-300 rounded-md bg-white ">
+                    <div class=" p-4 border-b border-gray-500 font-bold">
+                        <p>Last Five Transaction</p>
+                    </div>
+
+                    <ul>
+                        <li>
+                            dfgs
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="col-span-1 p-3">
+                <div class="w-full h-full flex justify-center items-center p-2 border border-slate-300 rounded-md bg-white ">
+
+                </div>
+            </div>
         </div>
 
     </div>

@@ -26,7 +26,9 @@ use Illuminate\Routing\Controllers\Middleware;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/testdash',[function (){
+ return view('dashboard.testdashboard');
+}])->name('testdash');
 Route::get('/',[homepagecontroller::class,'home'])->name('homepage');
 Route::get('/signup',[registrationcontroller::class,'signup'])->name('signuppage');
 Route::post('/store',[storecontroller::class,'store'])->name('store');

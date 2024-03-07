@@ -23,44 +23,44 @@
         {{-- menu --}}
         <div class=" border-gray-200">
             <ul class="block h-full pt-4">
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('dashboard')?'text-[#7f8dff]':''}}">
-                    <a href="{{route('dashboard')}}" class="">
-                        <i class="fa-solid fa-chart-pie text-gray-500 text-lg w-8 group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('dashboard')?'text-[#7f8dff]':''}}"></i>
+                <li class=" font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('dashboard')?'text-[#7f8dff]':'text-slate-600'}}">
+                    <a href="{{route('dashboard')}}" class="{{Route::is('dashboard')?'text-[#7f8dff]':''}}">
+                        <i class="fa-solid fa-chart-pie text-lg w-8 group-hover:text-[#7f8dff] ease-out duration-300 "></i>
                         Dashboard
                     </a>
                 </li>
 
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('properties')?'text-[#7f8dff]':''}}">
+                <li class="font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('properties')?'text-[#7f8dff]':'text-slate-600'}}">
                     <a href="{{route('properties')}}">
-                        <i class="fa-solid fa-building-user text-gray-500 w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('properties')?'text-[#7f8dff]':''}}"></i>
+                        <i class="fa-solid fa-building-user w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 "></i>
                         Properties
                     </a>
                 </li>
 
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('tenants')?'text-[#7f8dff]':''}}">
+                <li class="font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('tenants')?'text-[#7f8dff]':'text-slate-600'}}">
                     <a href="{{route('tenants')}}">
-                        <i class="fa-solid fa-user-tag text-gray-500 w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('tenants')?'text-[#7f8dff]':''}}"></i>
+                        <i class="fa-solid fa-user-tag w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 "></i>
                         Tenants
                     </a>
                 </li>
 
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('rent')?'text-[#7f8dff]':''}}">
+                <li class="font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('rent')?'text-[#7f8dff]':'text-slate-600'}}">
                     <a href="{{route('rent')}}">
-                        <i class="fa-solid fa-indian-rupee-sign text-gray-500 w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('rent')?'text-[#7f8dff]':''}}"></i>
+                        <i class="fa-solid fa-indian-rupee-sign w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 "></i>
                         Rent
                     </a>
                 </li>
 
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('expenses')?'text-[#7f8dff]':''}}">
+                <li class="font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('expenses')?'text-[#7f8dff]':'text-slate-600'}}">
                     <a href="{{route('expenses')}}">
-                        <i class="fa-solid fa-coins text-gray-500 w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('expenses')?'text-[#7f8dff]':''}}" ></i>
+                        <i class="fa-solid fa-coins w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 " ></i>
                         Expenses
                     </a>
                 </li>
 
-                <li class="text-gray-500 font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('settings')?'text-[#7f8dff]':''}}">
+                <li class="font-bold text-md pt-3 pb-3 pl-6 pr-6 ease-out group duration-300 hover:text-[#7f8dff] {{Route::is('settings')?'text-[#7f8dff]':'text-slate-600'}}">
                     <a href="{{route('settings')}}">
-                        <i class="fa-solid fa-sliders text-gray-500 w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 {{Route::is('settings')?'text-[#7f8dff]':''}}"></i>
+                        <i class="fa-solid fa-sliders w-8 text-lg group-hover:text-[#7f8dff] ease-out duration-300 "></i>
                         Settings
                     </a>
                 </li>

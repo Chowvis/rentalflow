@@ -4,7 +4,7 @@
     <div class="p-5 bg-gray-50 h-full">
         <div class="flex justify-between p-3 h-24 items-center">
             <div>
-                <p class="text-gray-800 font-bold text-[25px]">Properties</p>
+                <p class="text-gray-800 font-bold text-2xl">Properties</p>
                 <p class="py-2 font-semibold text-gray-400">You have {{count($properties)}} properties</p>
             </div>
             <div class="flex items-center gap-5">
