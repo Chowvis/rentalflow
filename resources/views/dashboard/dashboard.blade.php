@@ -71,7 +71,7 @@
         <div class="grid grid-cols-1 lg:grid-cols-3">
             <div class="col-span-2  p-3">
                 <div class="w-full h-full flex flex-col justify-center  border border-slate-300 rounded-md bg-white ">
-                    <div class=" p-4 border-b border-gray-500 font-bold">
+                    <div class=" p-4 border-b border-gray-300 font-bold">
                         <p>Last Five Transaction</p>
                     </div>
 
@@ -84,8 +84,78 @@
 
             </div>
             <div class="col-span-1 p-3">
-                <div class="w-full h-full flex justify-center items-center p-2 border border-slate-300 rounded-md bg-white ">
+                <div class="w-full h-full flex flex-col justify-center border border-slate-300 rounded-md bg-white ">
+                    <div class=" p-4 border-b border-gray-300 font-bold flex justify-between">
+                        <p>Tenants</p>
+                        <a class="text-[#7f8dff]" href="{{route('tenants')}}">View all</a>
+                    </div>
 
+                    <ul>
+                        <p class="hidden">{{$x = 0}}</p>
+
+                            @foreach ($tenants as $tenant)
+                                <li class="flex px-4 py-4 text-sm">
+                                    <div class="flex w-full justify-between">
+                                        <div class=" flex items-center w-full">
+                                            @if ($tenant->image === null)
+                                                <div class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm p-3
+                                                flex items-center justify-center uppercase">
+                                                {{$tenant->name[0]}}
+                                        </div>
+                                            @else
+                                                <div class="bg-blue-400 rounded-full w-10 h-10 font-bold text-white text-sm overflow-hidden
+                                                flex items-center justify-center uppercase">
+                                                <img src="/storage/{{$tenant->image}}" class="w-10" alt="">
+                                                </div>
+                                            @endif
+
+                                            <div class="flex flex-col">
+                                                <span class="pl-3 uppercase font-bold text-indigo-950">{{$tenant->name}}</span>
+                                                <span class="pl-3 text-xs ">{{$tenant->email}}</span>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="basis-1/12 flex items-center justify-end pr-10">
+                                            {{-- <a class="rounded-md bg-green-700 text-white font-semibold px-2 py-1 mr-1" href="{{route('show', $property->id)}}">View</a>
+                                            <a class="rounded-md bg-orange-700 text-white font-semibold px-2 py-1 mr-2" href="{{route('edit', $property->id)}}">Edit Details</a> --}}
+                                            <button id="dropdownMenuIconButton" data-dropdown-toggle="{{$tenant->id}}" class="inline-flex justify-center items-center p-2 text-sm font-medium text-center w-10 h-10 text-gray-900 bg-white rounded-full hover:bg-gray-300 focus:outline-none" type="button">
+                                                <i class="fa-solid fa-ellipsis-vertical"></i>
+                                            </button>
+
+                                                <!-- Dropdown menu -->
+                                            <div id="{{$tenant->id}}" class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44">
+                                                <ul class="py-2 text-sm text-gray-500" aria-labelledby="dropdownMenuIconButton">
+                                                    <li>
+                                                    <a href="{{route('showT',$tenant->id)}}" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-500 dark:hover:text-white">
+                                                        <i class="fa-solid fa-eye px-3"></i> View
+                                                    </a>
+                                                    </li>
+                                                </ul>
+
+                                            </div>
+
+
+                                        </div>
+                                    </div>
+
+
+
+
+
+                                </li>
+
+                                <hr>
+                                <p class="hidden">{{$x = $x+1}}</p>
+                                @if ($x>4)
+                                    @break
+                                @endif
+                            @endforeach
+
+
+
+                    </ul>
                 </div>
             </div>
         </div>

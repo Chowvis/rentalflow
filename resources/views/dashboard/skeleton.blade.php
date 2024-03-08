@@ -176,7 +176,7 @@
 }
 
         // Initial call to toggleMenuVisibility() when the page loads
-        toggleMenuVisibility();
+
 
         // Event listener for resizing the window
         window.addEventListener('resize', toggleMenuVisibility);
