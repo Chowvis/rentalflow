@@ -133,7 +133,13 @@
             <div class="p-3 pb-5">
                 <div class="flex flex-col">
                     <label for="file" class="text-sm mt-3 mb-2 font-bold">File Upload</label>
-                    <input type="file" name="file" placeholder="Choose file" class="border border-gray-300 rounded-md p-2 text-sm">
+                    <input type="file" name="file[]" placeholder="Choose file" id="imageInput" multiple onchange="previewImage()" class="border border-gray-300 rounded-md p-2 text-sm">
+                    <div class="flex" id="" >
+                        <div class="flex flex-wrap" id="preview">
+
+                        </div>
+
+                    </div>
                 </div>
             </div>
 
@@ -189,5 +195,56 @@
 
         myMarker.addTo(map);
         osm.addTo(map);
+    </script>
+     <script>
+        function previewImage() {
+            var preview = document.getElementById('preview');
+            var input = document.getElementById('imageInput');
+
+            if (input.files && input.files.length > 0) {
+                for (const file of input.files) {
+                    var reader = new FileReader();
+                    preview.innerHTML = '';
+                    reader.onload = function (e) {
+                        var img = document.createElement('img');
+                        // img.src = e.target.result;
+                        var fileExtension = file.name.split('.').pop().toLowerCase();
+                        console.log('File Extension:', fileExtension);
+                        if (fileExtension == 'pdf') {
+                            img.src = '/images/pdf.png';
+
+                        }
+                        else if (fileExtension == 'doc'||fileExtension=='docx') {
+                            img.src = '/images/doc.png';
+
+                        }
+                        else if (fileExtension == 'xls'||fileExtension=='xlsx') {
+                            img.src = '/images/xls.png';
+
+                        }
+                        else if (fileExtension == 'csv') {
+                            img.src = '/images/csv.png';
+
+                        }
+                        else {
+                            img.src = e.target.result;
+
+                        }
+                        img.classList.add('object-cover','w-36','h-36');
+                        img.style.margin = '5px'; // Add some spacing between images
+
+                        // Append the image to the preview div
+                        preview.appendChild(img);
+                    }
+
+                    // Read the selected file as a data URL
+                    reader.readAsDataURL(file);
+                }
+
+            }
+
+            // preview.style.display = 'block';
+            // preview.src = URL.createObjectURL(input.files[0]);
+        }
     </script>
 @endsection
