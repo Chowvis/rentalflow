@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Property;
+use App\Models\propertyfile;
 use App\Models\Tenant;
 use Illuminate\Http\Request;
 
@@ -22,7 +23,7 @@ class propertiescontroller extends Controller
     }
 
 
-    public function storeproperties(){
+    public function storeproperties(Request $request){
         $validate= request()->validate([
             'title' => 'required|min:4',
             'address1' => 'required',
@@ -35,9 +36,11 @@ class propertiescontroller extends Controller
             'description' => 'nullable|max:300',
             'latitude' => 'nullable',
             'longitude' => 'nullable',
+            'files' => 'nullable',
         ]);
 
         $user = auth()->user();
+
         //user id will be picked automatically by auth function
         $property = Property::create([
             'title' => request()->get('title'),
@@ -54,6 +57,29 @@ class propertiescontroller extends Controller
             'lat' => request()->get('latitude'),
             'lng' => request()->get('longitude'),
         ]);
+        $storefiles = Propertyfile::create([
+            'user_id'=>$user->id,
+            'property_id'=>$property->id,
+
+        ]);
+
+
+        if ($request->hasFile('files')) {
+            $files = $request->file('files');
+            // Iterate over each file
+            foreach ($files as $file) {
+                // Process each file (e.g., store
+                $filename = $file->getClientOriginalName();
+                $path = $filename->store($user.'/Property'.$storefiles->id.'/Documents','public');
+                $validate['files'] = $path;
+                $storefiles->image = $validate['image'];
+                $storefiles->save();
+                // Your code to handle each file
+
+            }
+        }
+
+
 
         return redirect()->route('properties')->with('success','Property is added successfully');
 

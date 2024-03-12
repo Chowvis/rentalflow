@@ -15,7 +15,7 @@
             </a>
         </div>
 
-        <form action="{{route('storeproperty')}}" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST">
+        <form action="{{route('storeproperty')}}" enctype="multipart/form-data" class="font-nunito bg-white border border-gray-300 rounded-md p-3" method="POST">
             @csrf
             <div class="grid lg:grid-cols-2 grid-cols-1 pb-5">
                 <div class="flex flex-col p-3">
@@ -44,7 +44,7 @@
 
                 <div class="flex flex-col p-3">
                     <label for="country" class="text-sm mt-3 mb-2 font-bold">Country</label>
-                    <input value="{{old('country')}}" type="text" name="country" placeholder="Enter Country" class="border border-gray-300 rounded-md p-2 text-sm">
+                    <input value="{{old('country')}}" type="text" name="country"  placeholder="Enter Country" class="border border-gray-300 rounded-md p-2 text-sm">
                     @error('country')
                         <span class="text-red-500 text-sm">{{$message}}</span>
                     @enderror
@@ -133,9 +133,9 @@
             <div class="p-3 pb-5">
                 <div class="flex flex-col">
                     <label for="file" class="text-sm mt-3 mb-2 font-bold">File Upload</label>
-                    <input type="file" name="file[]" placeholder="Choose file" id="imageInput" multiple onchange="previewImage()" class="border border-gray-300 rounded-md p-2 text-sm">
+                    <input type="file" name="files[]" placeholder="Choose file" id="imageInput" multiple onchange="previewImage()" class="border border-gray-300 rounded-md p-2 text-sm">
                     <div class="flex" id="" >
-                        <div class="flex flex-wrap" id="preview">
+                        <div class="flex flex-wrap p-2" id="preview">
 
                         </div>
 
