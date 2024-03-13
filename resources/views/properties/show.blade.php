@@ -83,7 +83,29 @@
 
                 </table>
 
-                <div id="attachment" class="hidden ">attachments</div>
+                <div id="attachment" class="hidden">
+                    <div class="flex gap-3">
+                        @foreach ($files as $file)
+                            @if (pathinfo($file->files, PATHINFO_EXTENSION) === 'csv')
+                                <img src="/images/csv.png" class="w-36  h-36 object-cover" alt="">
+
+                            @elseif (pathinfo($file->files, PATHINFO_EXTENSION) === 'pdf')
+                                <img src="/images/pdf.png" class="w-36  h-36 alt="">
+
+                            @elseif (pathinfo($file->files, PATHINFO_EXTENSION) === 'doc' || pathinfo($file->files, PATHINFO_EXTENSION) === 'docx')
+                                <img src="/images/doc.png" class="w-36  h-36 alt="">
+
+                            @elseif (pathinfo($file->files, PATHINFO_EXTENSION) === 'xls' || pathinfo($file->files, PATHINFO_EXTENSION) === 'xlsx')
+                                <img src="/images/xls.png" class="w-36  h-36 alt="">
+
+                            @else
+                                <img src="/storage/{{$file->files}}" class="w-36  h-36 object-cover" alt="">
+                            @endif
+
+                         @endforeach
+                    </div>
+
+                </div>
                 <div id="location" class="hidden">
                     <div id="mapshow" class="h-[500px] w-full"></div>
                 </div>
