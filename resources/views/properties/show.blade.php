@@ -87,16 +87,16 @@
                     <div class="flex gap-3">
                         @foreach ($files as $file)
                             @if (pathinfo($file->files, PATHINFO_EXTENSION) === 'csv')
-                                <img src="/images/csv.png" class="w-36  h-36 object-cover" alt="">
+                                <img src="/images/csv.png" class="w-36  h-36 object-cover hover:w-32 hover:h-32" alt="">
 
                             @elseif (pathinfo($file->files, PATHINFO_EXTENSION) === 'pdf')
-                                <img src="/images/pdf.png" class="w-36  h-36 alt="">
+                                <img src="/images/pdf.png" class="w-36  h-36 object-cover hover:w-32 hover:h-32" alt="">
 
                             @elseif (pathinfo($file->files, PATHINFO_EXTENSION) === 'doc' || pathinfo($file->files, PATHINFO_EXTENSION) === 'docx')
-                                <img src="/images/doc.png" class="w-36  h-36 alt="">
+                                <img src="/images/doc.png" class="w-36  h-36 object-cover" alt="">
 
                             @elseif (pathinfo($file->files, PATHINFO_EXTENSION) === 'xls' || pathinfo($file->files, PATHINFO_EXTENSION) === 'xlsx')
-                                <img src="/images/xls.png" class="w-36  h-36 alt="">
+                                <img src="/images/xls.png" class="w-36  h-36 object-cover" alt="">
 
                             @else
                                 <img src="/storage/{{$file->files}}" class="w-36  h-36 object-cover" alt="">
