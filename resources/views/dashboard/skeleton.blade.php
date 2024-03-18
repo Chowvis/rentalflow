@@ -15,7 +15,7 @@
 </head>
 <body class="flex font-nunito">
     {{-- left content --}}
-    <div id="leftSidebar" class=" flex flex-col sticky left-0 top-0 h-screen w-300 border-r border-gray-200">
+    <div id="leftSidebar" class=" flex flex-col sticky left-0 top-0 h-screen w-300 border-r border-gray-200 ease-in-out duration-300 ">
         {{-- logo --}}
         <div class="h-16 flex justify-start items-center pl-5 border-b">
             <img class="h-8" src="/images/logo.png" alt="">
@@ -169,9 +169,13 @@
 
         // Hide menu on tablet view (screen width less than or equal to 768px)
         if (screenWidth <= 1200) {
-            document.getElementById('leftSidebar').classList.add('hidden');
+            document.getElementById('leftSidebar').classList.add('-translate-x-[300px]');
+            document.getElementById('leftSidebar').classList.remove('w-300');
+            document.getElementById('leftSidebar').classList.add('w-0');
         } else {
-            document.getElementById('leftSidebar').classList.remove('hidden');
+            document.getElementById('leftSidebar').classList.remove('-translate-x-[300px]');
+            document.getElementById('leftSidebar').classList.add('w-300');
+            document.getElementById('leftSidebar').classList.remove('w-0');
         }
 }
 
@@ -180,6 +184,19 @@
 
         // Event listener for resizing the window
         window.addEventListener('resize', toggleMenuVisibility);
+
+        window.addEventListener('load',function(e){
+            if(window.innerWidth <= 1200){
+                document.getElementById('leftSidebar').classList.add('-translate-x-[300px]');
+                document.getElementById('leftSidebar').classList.remove('w-300');
+                document.getElementById('leftSidebar').classList.add('w-0');
+            }else{
+                document.getElementById('leftSidebar').classList.remove('-translate-x-[300px]');
+                document.getElementById('leftSidebar').classList.add('w-300');
+                document.getElementById('leftSidebar').classList.remove('w-0');
+            }
+
+        });
     </script>
 </body>
 </html>
